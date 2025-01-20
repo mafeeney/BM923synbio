@@ -82,8 +82,8 @@ In the pop-up window, click "Import from database" and paste or type the accessi
 
 This should give you the plasmid sequence for the plasmid (@fig-pet12). Note the constitutive promoter (Pc) that we want to use for our cloning project. There is a multiple cloning site (MCS) just downstream of it, which contains EcoRI, BclI, AflIII etc. sites ... we have chosen above to use the EcoRI site (but note that we could have chosen any of the sites in the MCS).
 
-
 ![Plasmid map of the vector imported into Benchling](0images/pet12.png){#fig-pet12}
+
 You can confirm the presence of the EcoRI site manually as well (click on the scissors icon in the right-hand menu and then search for "EcoRI" (@fig-pet13).
 
 ![Confirming the EcoRI site in your imported vector sequence](0images/pet13.png){#fig-pet13}
