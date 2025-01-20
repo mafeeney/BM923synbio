@@ -1,5 +1,137 @@
 ---
-title: "Differential stains - acid-fast staining"
+title: "PET hydrolase homolog cloning"
 ---
 
 ## Cloning PET hydrolase homologs for heterologous expression in Pseudomonas (Gibson assembly)
+
+In this example we will clone the pET hydrolase from *Ideonella sakaiensis* into an expression vector (pMMPc) with a strong constitutive promoter for expression in *Pseudomonas putida*, using Gibson assembly.
+
+### Rationale for design choices
+
+Strain choice: *Pseudomonas putida* is tolerant to solvents, has a robust metabolism and capacity to withstand stresses, and has been used as a chassis organism for industrial biotechnology purposes previously, making it an ideal choice for our PET hydrolase expression system. (c.f. Weimer et al 2020 - https://doi.org/10.1007/s00253-020-10811-9) 
+
+Vector choice: Need a plasmid that will replicate in Pseudomonas, with a strong constitutive promoter. Xu et al (2013) created some appropriate vectors, c.f. doi: 10.1128/AEM.03746-12 - we will choose pMMPc (Genbank accession KC544266). 
+
+Choice of PET hydrolase: *Ideonella sakaiensis* has been shown to degrade PET (and can use it as a sole carbon/energy source) doi:10.1126/science.aad6359. We will begin by cloning the well-characterized PET hydrolase from this organism (further optimisation of the hydrolase properties using gene engineering, or exploration of potentially more active/useful homologs may be necessary in the future). 
+
+### Obtaining the sequence for the PET hydrolase
+
+1. Search the UniProt database for "PET hydrolase" (@fig-pet1).
+
+![Searching the UniProt database](0images/pet1.png){#fig-pet1}
+
+2. Click on the search result that you want (in our case, the PET hydrolase from *Ideonella sakaiensis*/*Piscinibacter sakaiensis*). This should take you to the page for this protein, with information about its function, etc. 
+
+![The I. sakaiensis PET Hydrolase entry in UniProt](0images/pet2.png){#fig-pet2}
+
+3. The uniprot accession # for this PET hydrolase is A0A0K8P6T7, which you will need to import the data into Benchling.
+
+In Benchling, you may wish to start a new project (You can do this by clicking on the + icon in the left-hand toolbar, selecting "Project", and then giving your new project an informative name and description, then clicking "Create project".)
+
+To import the sequence of the PET hydrolase, click on the + icon, then click AA sequence > Import AA sequence (@fig-pet3)
+
+![Importing an AA sequence into Benchling](0images/pet3.png){#fig-pet3}
+
+Click "Import from database", specify the Accession number (A0A0K8P6T7), Database (UniProt), and Project folder (the folder you just created), then click "Import" (@fig-pet4).
+
+![Specifying the Uniprot accession to import](0images/pet4.png){#fig-pet4}
+
+You should then be able to open the imported sequence and observe the amino acid sequence and its features (@fig-pet5).
+
+![The PET hydrolase sequence imported into Benchling](0images/pet5.png){#fig-pet5}
+
+4. You will now need to create a reverse translation of the amino acid sequence to derive the coding sequence necessary for its production.
+
+Select the entire sequence, right click on it, and then then click on "Back translate".
+
+Specify the options to optimize your back translation: you wish to codon optimize for expression in *Pseudomonas putida*, and you should add EcoRI as a cut site to avoid (we will be using this site to cut the plasmid for our Gibson assembly reaction.) (@fig-pet6)
+
+![Specifying options to reverse translate/back translate the PET hydrolase AA sequence](0images/pet6.png){#fig-pet6}
+
+Click "Preview optimization" when you are happy with the settings, and then "Save as new sequence", making sure to save it in the correct Project folder.
+
+6. Quality check and modify the sequence as necessary:
+
+  A. Select the entirety of the sequence, then click Create > Translation > Forward to examine the translation of your new nucleotide sequence (@fig-pet7). 
+  
+![The PET hydrolase sequence in Benchling, with translation added](0images/pet7.png){#fig-pet7}  
+
+In this case, note that while there is a start codon present, there is no stop codon - we need to add one. 
+
+Right click at the end of the sequence, then select "Insert bases" and add a stop codon (any of the 3 stop codons is fine).
+
+![Adding a stop codon to the sequence](0images/pet8.png){#fig-pet8}  
+
+  B. You may also wish to add an RBS at the beginning of the sequence (it doesn't look like there is one present in the vector that we're using). You can do this using the same method (right click, "Insert bases", add the desired bases. You could use for example RBS 33 from Aparicio et al 2020, which has been shown to give high expression in *P. putida* (https://doi.org/10.1016/j.isci.2020.100946)  - <u>TAAGGAGGT<u>AAAAACAT<b>ATG</b> (RBS underlined, start in bold))
+
+![Adding an RBS to the sequence](0images/pet9.png){#fig-pet9}  
+
+  C. You can double-check that this sequence is correct by confirming (e.g., using BLASTx) that it matches the *I. sakaiensis* PET hydrolase protein. 
+  
+This is the sequence that you would then have synthesized (e.g., by GenScript or another DNA synthesis company) for use in your Gibson assembly reaction.
+
+### Obtaining the sequence for the plasmid 
+
+The NCBI accession number for the plasmid we wish to use is KC544266. You can import this into Benchling by clicking the + icon, then clicking DNA/RNA sequence > Import DNA RNA sequences.
+
+![Importing a DNA sequence into Benchling](0images/pet10.png){#fig-pet10}
+
+In the pop-up window, click "Import from database" and paste or type the accession number into the "Sequence" box, then click "Search", and then "Import" (@fig-pet11).
+
+![Specifying an NCBI accession number to import](0images/pet11.png){#fig-pet11}
+
+This should give you the plasmid sequence for the plasmid (@fig-pet12). Note the constitutive promoter (Pc) that we want to use for our cloning project. There is a multiple cloning site (MCS) just downstream of it, which contains EcoRI, BclI, AflIII etc. sites ... we have chosen above to use the EcoRI site (but note that we could have chosen any of the sites in the MCS).
+
+![Plasmid map of the vector imported into Benchling](0images/pet12.png){#fig-pet12}
+You can confirm the presence of the EcoRI site manually as well (click on the scissors icon in the right-hand menu and then search for "EcoRI" (@fig-pet13).
+
+![Confirming the EcoRI site in your imported vector sequence](0images/pet13.png){#fig-pet13}
+
+
+### In silico design of your Gibson Assembly
+
+1. Click on "Assembly" in the bottom right hand corner of your screen > "Assembly Wizard", and then in the pop-up window Pick Assembly Strategy, select "Gibson" (@fig-pet14).
+
+![Choosing an Assembly Strategy](0images/pet14.png){#fig-pet13}
+
+This should bring up a message encouraging you to try the new combinatorial assembly tool - click that link.
+
+2. In the pop-up menu, add the name of your plasmid that you are aiming to create (Tip: choose something informative, e.g. pMMPc-PET), and be sure to specify the correct project folder. 
+
+Check the other specifications: you are assembling two fragments, to create a circular construct, and you will be producing fragments by "Digest with restriction enzyme". The defualts for min/max length and min Tm of your binding regions are fine. 
+
+When you are happy with the specifications, click "Save" (@fig-pet15)
+
+![Specifying DNA assembly parameters](0images/pet15.png){#fig-pet15}
+
+You should now get an assembly tool that allows you to specify the fragments you will use (@fig-pet16).
+
+![Specifying the DNA fragments to use in your assembly](0images/pet16.png){#fig-pet16}
+
+For BIN 1 (Backbone), click the + symbol > Open sequences > KC544266 (@fig-pet17)
+
+![Adding the vector backbone](0images/pet17.png){#fig-pet17}
+
+Specify the 5' enzyme and 3' enzyme you will use (EcoRI) and the EcoRI site on the map as the Start and End sites (by clicking on View: Plasmid map to see the EcoRI site if necessary) (@fig-pet18), then click "Add".
+
+![Specifying the vector start and end and enzyme details](0images/pet18.png){#fig-pet18}
+
+For BIN 2 (Insert 1), change the method to "Add new overlaps using PCR" and then click the + sign to add your fragment > Open sequences > the name of your codon optimized sequence (@fig-pet19).
+
+![Adding the insert to your assembly](0images/pet19.png){#fig-pet19}
+
+This should bring up your correct fragment to insert (@fig-pet20). Click "add".
+
+![Adding the insert fragment](0images/pet20.png){#fig-pet20}
+
+Click "Autopopulate" in the "Constructs" box (@fig-pet21), and then "Assemble" in the top right hand corner".
+
+![Autopopulate the constructs in your assembly](0images/pet21.png){#fig-pet21}
+
+Work through the Assemble DNA menu, specifying the folder where you would like to save your constructs, fragments, and primers (@fig-pet22). 
+
+![Specifying the locations to save your constructs, fragments, and primers](0images/pet22.png){#fig-pet22}
+Examine your final construct (@fig-pet23) to verify the construct has placed your PET hydrolase gene in the correct orientation relative to the Pc promoter, and to see the sequences of the primers that you would need to order to carry out this Gibson assembly (@fig-pet24).
+
+![Viewing your final construct](0images/pet23.png){#fig-pet23}
+![Viewing the primers needed for your assembly](0images/pet24.png){#fig-pet24}
