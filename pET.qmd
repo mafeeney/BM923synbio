@@ -62,7 +62,7 @@ Right click at the end of the sequence, then select "Insert bases" and add a sto
 
 ![Adding a stop codon to the sequence](0images/pet8.png){#fig-pet8}  
 
-  B. You may also wish to add an RBS at the beginning of the sequence (it doesn't look like there is one present in the vector that we're using). You can do this using the same method (right click, "Insert bases", add the desired bases. You could use for example RBS 33 from Aparicio et al 2020, which has been shown to give high expression in *P. putida* (https://doi.org/10.1016/j.isci.2020.100946)  - <u>TAAGGAGGT<u>AAAAACAT<b>ATG</b> (RBS underlined, start in bold))
+  B. You may also wish to add an RBS at the beginning of the sequence (it doesn't look like there is one present in the vector that we're using). You can do this using the same method (right click, "Insert bases", add the desired bases. You could use for example RBS 33 from Aparicio et al 2020, which has been shown to give high expression in *P. putida* (https://doi.org/10.1016/j.isci.2020.100946)  - <u>TAAGGAGGT</u>AAAAACAT<b>ATG</b> (RBS underlined, start in bold))
 
 ![Adding an RBS to the sequence](0images/pet9.png){#fig-pet9}  
 
