@@ -14,63 +14,63 @@ We can do this using BLAST. An appropriate query in this case would be the <i>ad
 
 We can retrieve this sequence from a database, such as <a href="https://strepdb.streptomyces.org.uk/">StrepDB</i>^[a specialised database for Streptomyces genome information] - other databases (such as NCBI) would work just as well.
 
-1. Navigate to StrepDB and search for the adpA gene. (Enter "adpA" in the search bar at the top left and click "Search Genes").
+1. Navigate to StrepDB and search for the adpA gene (@fig-adpA1). (Enter "adpA" in the search bar at the top left and click "Search Genes").
 
-![An Elephant](0images/adpA1.png){#fig-adpA1}
+![The StrepDB database](0images/adpA1.png){#fig-adpA1}
 
-2. A pop-up should appear ("SCO2792 araC-family transcriptional regulator" - click on that link to be redirected to the page for the *adpA* gene.)
+2. A pop-up should appear ("SCO2792 araC-family transcriptional regulator" - click on that link to be redirected to the page for the *adpA* gene - @fig-adpA2)
 
-![An Elephant](0images/adpA2.png){#fig-adpA2}
+![The page for adpA in StrepDB](0images/adpA2.png){#fig-adpA2}
 
 3. Read through the page to check that you have the correct gene, then click the button "Nt seq" to retrieve the *adpA* nucleotide sequence. (Keep 0 for the amount of flanking region - you only want the sequence of the gene itself.)
 
-Select the entire sequence of the gene and copy it (either using Ctrl+C or right-click and select "Copy" from the menu).
+Select the entire sequence of the gene (@fig-adpA3) and copy it (either using Ctrl+C or right-click and select "Copy" from the menu).
 
-![An Elephant](0images/adpA3.png){#fig-adpA3}
+![The adpA nucleotide sequence from StrepDB](0images/adpA3.png){#fig-adpA3}
 
 4. Navigate to the <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI BLAST page</a> and click on "Nucleotide BLAST".
 
 5. On the BLASTn page, paste the sequence you acquired from StrepDB into the "Query" sequence box. 
 
-Under "Choose Search Set", keep the database as "Standard databases (nr etc)" and specify the organism (if you begin typing the name of your species (Streptomyces spectabilis), a menu should automatically appear with suggested search terms. We want to select "Streptomyces spectabilis (taxid:68270)).
+Under "Choose Search Set", keep the database as "Standard databases (nr etc)" and specify the organism (if you begin typing the name of your species (Streptomyces spectabilis), a menu should automatically appear with suggested search terms. We want to select "Streptomyces spectabilis (taxid:68270)) (@fig-adpA4). 
 
-![An Elephant](0images/adpA4.png){#fig-adpA4}
+![Using BLAST to find the adpA homolog in Streptomyces spectabilis](0images/adpA4.png){#fig-adpA4}
 
 Click the blue "BLAST" button and wait for your results.
 
 6. Examine the alignments. For the ATCC 27465 strain (the one we are working with), click on the "Genbank" link next to the range numbers (@fig-adpA5). 
 
-![An Elephant](0images/adpA5.png){#fig-adpA5}
+![BLAST hit results - with the link to the Genbank range for this hit circled in red.](0images/adpA5.png){#fig-adpA5}
 
 7. Check that this has taken you to the correct sequence (Streptomyces spectabilis sequence, product annotated as a helix-turn-helix domain-containing protein) and click the link to view the "FASTA" formatted sequence (@fig-adpA6). Copy this sequence (@fig-adpA7). 
 
-![An Elephant](0images/adpA6.png){#fig-adpA6}
+![The nucleotide sequence for the adpA homolog from Streptomyces spectabilis, with the link to the FASTA-formatted sequence highlighted in red](0images/adpA6.png){#fig-adpA6}
 
-![An Elephant](0images/adpA7.png){#fig-adpA7}
+![The FASTA sequence of the Streptomyces spectabilis adpA gene highlighted](0images/adpA7.png){#fig-adpA7}
 
 ### Import Sequences into Benchling
 
-1. In Benchling, create a new Project to organise your work. Click the + icon and select "Project". Give your project an informative name and description (this will help you in the future, especially if you have multiple projects or complex work schemes.)
+1. In Benchling, create a new Project to organise your work. Click the + icon and select "Project" (@adpA8). Give your project an informative name and description (this will help you in the future, especially if you have multiple projects or complex work schemes.)
 
-![An Elephant](0images/adpA8.png){#fig-adpA8}
+![Starting a new Benchling project](0images/adpA8.png){#fig-adpA8}
 
 2. In your new project, click the + icon again. This time, add a new DNA/RNA sequence (@fig-adpA9).
 
-![An Elephant](0images/adpA9.png){#fig-adpA9}
+![Adding a new DNA/RNA sequence in Benchling](0images/adpA9.png){#fig-adpA9}
 
-Give the molecule an informative name, specify the type (DNA),topology (Linear), and project folder (your new project folder). Paste the sequence you obtained from NCBI into "Bases" and click "Create".
+Give the molecule an informative name, specify the type (DNA),topology (Linear), and project folder (your new project folder). Paste the sequence you obtained from NCBI into "Bases" and click "Create" (@fig-adpA10).
 
-![An Elephant](0images/adpA10.png){#fig-adpA10}
+![Create a DNA/RNA sequence in Benchling](0images/adpA10.png){#fig-adpA10}
 
 3. Now, to check that your sequence is correct, you should perform the following checks: 
 
-  A. Check the translation of this sequence - select the entire sequence, click "Create" > "translation" > "Forward"
+  A. Check the translation of this sequence - select the entire sequence, click "Create" > "translation" > "Forward" (@fig-adpA11).
 
-![An Elephant](0images/adpA11.png){#fig-adpA11}
+![Adding a translation to your adpA sequence in Benchling](0images/adpA11.png){#fig-adpA11}
 
 Give the translation a name (e.g., AdpA) and click "Save). The amino acid sequence should now appear under the nucleotide sequence (@fig-adpA12). Check that there are no premature stop codons.
 
-![An Elephant](0images/adpA12.png){#fig-adpA12}
+![The adpA sequence with added translation](0images/adpA12.png){#fig-adpA12}
 
   B. Compare the sequence against the <i>Streptomyces coelicolor</i> genome using BLAST (ensure that this is in fact the adpA homolog).
   
@@ -78,63 +78,63 @@ Give the translation a name (e.g., AdpA) and click "Save). The amino acid sequen
 
 Click the + icon again > DNA/RNA sequence > Import DNA/RNA sequences (@fig-adpA13).
 
-![An Elephant](0images/adpA13.png){#fig-adpA13}
+![Importing a DNA/RNA sequence in Benchling](0images/adpA13.png){#fig-adpA13}
 
 Search for pMS17 in the <a href="https://www.addgene.org/">addgene database</a> (@fig-adpA14).
 
-![An Elephant](0images/adpA14.png){#fig-adpA14}
+![Searching for pMS17 in the addgene website](0images/adpA14.png){#fig-adpA14}
 
 Click on the record for pMS17 and copy the URL for this page (https://www.addgene.org/127088/). 
 
 In Benchling, under "Import from database", copy this URL into the search bar and click "Search" (@fig-adpA15)
 
-![An Elephant](0images/adpA15.png){#fig-adpA15}
+![Searching for pMS17 using its addgene URL](0images/adpA15.png){#fig-adpA15}
 
-This should bring up the correct record for pMS17, click "Import".
+This should bring up the correct record for pMS17, click "Import" (@fig-adpA16).
 
-![An Elephant](0images/adpA16.png){#fig-adpA16}
+![Importing pMS17 into Benchling](0images/adpA16.png){#fig-adpA16}
 
 ### Identify the restriction enzymes we can use for cloning *adpA* into pMS17
 
 1. We need to clone downstream of the tet operator (so that the gene is expressed under control of this promoter). You can see the multiple cloning site (MCS) here by clicking on "Plasmid" and zooming in to look at the MCS (@fig-adpA17)
 
-![An Elephant](0images/adpA17.png){#fig-adpA17}
+![The pMS17 multiple cloning site](0images/adpA17.png){#fig-adpA17}
 
 In this case, XbaI, EcoRV, NsiI, or KpnI look like possible choices. 
 
 Confirm that these enzymes each only cut the vector once (click on the scissors icon in the right-hand pane and start typing an enzyme name - as shown in @fig-adpA18, for XbaI, which only cuts once.)
 
-![An Elephant](0images/adpA18.png){#fig-adpA18}
+![Checking the restriction enzyme cutting patterns in pMS17](0images/adpA18.png){#fig-adpA18}
 
 2. Check whether any of these enzymes cut the adpA sequence (if they do, we would not be able to use them for cloning in this way.)
 
 In the adpA sequence, again click on the scissors icon on the right, and check each of the enzymes - as you see in @fig-adpA19, KpnI does cut the sequence, and so must be avoided.
 
-![An Elephant](0images/adpA19.png){#fig-adpA19}
+![KpnI restriction sites in the adpA sequence](0images/adpA19.png){#fig-adpA19}
 
 Check whether the enzymes are compatible with one another using the NEB double digest checker. As you see in @fig-adpA20, XbaI and EcoRV don't have 100% activity in any of the NEB buffers (if you were using enzymes from another company, you would use their catalog/enzyme materials instead.) Similarly, XbaI and NsiI don't have full activity in any of the buffers. However, EcoRV and NsiI have full activity in buffer r3.1 - so we will choose these two enzymes. (Note from the map of the NCS, EcoRV should be used for the forward primer and NsiI for the reverse primer.)
 
-![An Elephant](0images/adpA20.png){#fig-adpA20}
+![NEB double digest selector results for XbaI and EcoRV](0images/adpA20.png){#fig-adpA20}
 
 ### Design primers to amplify adpA with the desired restriction enzyme sites
 
-1. Selec tthe first 20-25 bases of the adpA sequence to create your forward primer (if possible, end on a C or a G nucleotide). Click create > Primer > Forward (@fig-adpA21).
+1. Select the first 20-25 bases of the adpA sequence to create your forward primer (if possible, end on a C or a G nucleotide). Click create > Primer > Forward (@fig-adpA21).
 
-![An Elephant](0images/adpA21.png){#fig-adpA21}
+![Creating the adpA forward primer](0images/adpA21.png){#fig-adpA21}
 
 In the primer design window that pops up, use the menu to select EcoRV to look up the cut site (GATATC) (@fig-adpA22)
 
-![An Elephant](0images/adpA22.png){#fig-adpA22}
+![Adding the EcoRV cut site to the adpA forward primer](0images/adpA22.png){#fig-adpA22}
 
 Copy and paste the GATATC EcoRV cut site at the beginning (5' end) of your primer. You will also need to add some bases upstream of the EcoRV sequence (most restriciton enzymes do not cut well at the very end of a DNA fragment - you can look up the precise amount of overhang needed at <a href="https://www.neb.com/en-gb/tools-and-resources/usage-guidelines/cleavage-close-to-the-end-of-dna-fragments">NEB's "Cleavage Close to the end of DNA Fragments" guide</a>). (Note that the sequence you add here does not matter, as it will be cleaved away and not included in part of your final product - though of course it is best to avoid duplicating the restriction enzyme site itself.)
 
 Be sure to adjust the overhang to match the number of bases you have added (in this case, 14 - @fig-adpA23)
 
-![An Elephant](0images/adpA23.png){#fig-adpA23}
+![Adding an overhang to the adpA forward primer](0images/adpA23.png){#fig-adpA23}
 
 Give the primer an informative name and click "Save Primer", being sure to save it in the correct Project folder. It should now appear in your adpA sequence, as shown in @fig-adpA24.
 
-![An Elephant](0images/adpA24.png){#fig-adpA24}
+![The adpA forward primer](0images/adpA24.png){#fig-adpA24}
 
 2. Repeat the above process to create your reverse primer, being sure to specify "Reverse" primer when you create it, and to choose the correct enzyme (NsiI)
 
@@ -144,7 +144,7 @@ This is necessary so that we can use the two primers to perform *in silico* PCR 
 
 Click on the forward primer, then press the "Shift" key and then click on the reverse primer. This should highlight the primers and the sequence between them (@fig-adpA25).
 
-![An Elephant](0images/adpA25.png){#fig-adpA25}
+![Linking the adpA primers to create an in silico PCR product](0images/adpA25.png){#fig-adpA25}
 
 Right click on the highlighted sequence, and then from the pop-up menu, select "Link primers"
 
@@ -152,7 +152,7 @@ This should give you a pop-up menu, showing that the two primers are linked. Cli
 
 In the pop-up menu, be sure that "Use primer bases instead of sequence (includes overhang if any)" is selected, and you will probably also wish to copy over "Annotations, translations, and primers" to preserve the translation that you entered earlier (@fig-adpA26). Click "Copy", and be sure to save the copy in the correct Project folder.
 
-![An Elephant](0images/adpA26.png){#fig-adpA26}
+![Creating the adpA in silico PCR product](0images/adpA26.png){#fig-adpA26}
 
 ### Perform *in silico* restriction digests
 
@@ -160,36 +160,36 @@ In the pop-up menu, be sure that "Use primer bases instead of sequence (includes
 
 In the adpA sequence, click the scissors icon, and then select the two enzymes that you wish to use to cut this sequence (EcoRV and NsiI) (@fig-adpA27)
 
-![An Elephant](0images/adpA27.png){#fig-adpA27}
+![Digesting the in silico PCR product with EcoRV and NsiI](0images/adpA27.png){#fig-adpA27}
 
 Click "Run digest". This should generate 3 fragments (the tiny end overhangs, which are cut away, and the 1319 nucleotide fragment which contains the adpA sequence that we are cloning into pMS17. (@fig-adpA28))
 
-![An Elephant](0images/adpA28.png){#fig-adpA28}
+![Products generated from the in silico restriction digest](0images/adpA28.png){#fig-adpA28}
 
-2. Similarly, cut the pMS17 vecotr with EcoRV and NsiI - this should generate two fragments (a small 13 nt portion of the MCS, which is being cut away, and the larger (5876 nt) part of the vector, which we are cloning into - @fig-adpA29).
+2. Similarly, cut the pMS17 vector with EcoRV and NsiI - this should generate two fragments (a small 13 nt portion of the MCS, which is being cut away, and the larger (5876 nt) part of the vector, which we are cloning into - @fig-adpA29).
 
-![An Elephant](0images/adpA29.png){#fig-adpA29}
+![Products from the in silico digest of pMS17 with EcoRV and NsiI](0images/adpA29.png){#fig-adpA29}
 
 ### Ligate the DNA fragments together
 
 At the bottom right hand corner of the screen, click "Assembly" and then "Assembly Wizard". From the pop-up menu, select "Digest and Ligate" as your Assembly Strategy, and then click "Start" (@fig-adpA30). This should open a preview of your untitled assembly at the bottom of the screen (@fig-adpA31)
 
-![An Elephant](0images/adpA30.png){#fig-adpA30}
+![Choosing an Assembly Strategy in the Benchling Assembly Wizard](0images/adpA30.png){#fig-adpA30}
 
-![An Elephant](0images/adpA31.png){#fig-adpA31}
+![Preview of an untitled assembly in Benchling](0images/adpA31.png){#fig-adpA31}
 
 Ensure that you have selected the correct (larger) fragment of pMS17 that you wish to use for this cloning project. Click on "Backbone" in this preview, and then "Set from selection". 
 
 pMS17 (5.9kb, cut by NsiI and EcoRV) should now appear in your assembly as the backbone (@fig-adpA32).
 
-![An Elephant](0images/adpA32.png){#fig-adpA32}
+![pMS17 selected as the backbone of the assembly](0images/adpA32.png){#fig-adpA32}
 
 Similarly, select and set your NsiI-EcoRV digested adpA fragment as the insert (@fig-adpA33)
 
-![An Elephant](0images/adpA33.png){#fig-adpA33}
+![adpA fragment selected as the insert in the assembly](0images/adpA33.png){#fig-adpA33}
 
 Click "Done". Then give your assembly a name (e.g. pMS17-adpA), and ensure that you are saving it in the correct folder. 
 
 This should generate a plasmid map of your pMS17-adpA construct (@fig-adpA34). Check to make sure your adpA sequence is present in the plasmid and in the correct orientation with regards to the tet promoter (annotated by addgene as the tet operator). 
 
-![An Elephant](0images/adpA34.png){#fig-adpA34}
+![The new pMS17-adpA plasmid map](0images/adpA34.png){#fig-adpA34}
