@@ -4,93 +4,79 @@
     "href": "index.html",
     "title": "BM923 Synthetic Biology Workshop",
     "section": "",
-    "text": "Preface\nThis is a Quarto book, generated using the sipbs-compbiol-book-template GitHub template.\nThe Preface page is intended as a frontispiece with brief introductory information about the book and, maybe, its authors.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
+    "text": "Preface\nThis is a Quarto book, written to accompany the BM923 Bioprocessing workshop on Synthetic Biology. This book will go through the 4 worked examples mentioned in the workshop:",
     "crumbs": [
       "Preface"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
+    "objectID": "index.html#how-to-use-this-book",
+    "href": "index.html#how-to-use-this-book",
+    "title": "BM923 Synthetic Biology Workshop",
+    "section": "How to use this book:",
+    "text": "How to use this book:\nYou can navigate this book using the links provided in the sidebar at the left, or by using the arrows at the bottom right of each page to progress.\nYou can work through the four examples in any order.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#requirements-for-this-workshop",
+    "href": "index.html#requirements-for-this-workshop",
+    "title": "BM923 Synthetic Biology Workshop",
+    "section": "Requirements for this workshop:",
+    "text": "Requirements for this workshop:\nYou will need to sign up for a free Benchling account for this workshop.\nYou should be able to use most internet web browsers to complete this workshop, but please note that it was written and tested using Google Chrome. If you encounter issues with using another browser, consider switching to a different browser and please also inform Dr. Feeney of the issue (with a detailed description of what went wrong).",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "index.html#any-issues",
+    "href": "index.html#any-issues",
+    "title": "BM923 Synthetic Biology Workshop",
+    "section": "Any issues?",
+    "text": "Any issues?\nThis Quarto book is hosted in GitHub; if you encounter any issues (typos, broken links, technical issues), or have any suggestions for improving this workshop, please kindly raise a GitHub issue or speak with Dr. Feeney directly.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "adpA.html",
+    "href": "adpA.html",
+    "title": "1  AdpA",
     "section": "",
-    "text": "The Introduction page is intended as a short introduction to the book.\nLike most Quarto books, this is a book created from markdown and executable code.\nThis kind of book is an example of literate programming - the intertwining of nicely-formatted text and images, and executable code. For example, the R code cell below executes and produces output when the book is compiled:\n\n1 + 1\n\n[1] 2\n\n\nBut the R code cell below does not:\n\nsummary(cars)\n\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "1.1 Cloning adpA (antibiotic biosynthesis regulator) for overexpression in Streptomyces spectabilis (Restriction Enzyme-based cloning)\nWe wish to clone a regulator of antibiotic biosynthesis (adpA) under control of an inducible promoter (tcpp), in order to overexpress it to different levels and determine whether we can create strains that produce higher titers of antibiotics. This document outlines the steps that are necessary to construct the desired vector: you should follow along in your Benchling account.",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>AdpA</span>"
     ]
   },
   {
-    "objectID": "early-section.html",
-    "href": "early-section.html",
-    "title": "Early Section",
+    "objectID": "adpA.html#cloning-adpa-antibiotic-biosynthesis-regulator-for-overexpression-in-streptomyces-spectabilis-restriction-enzyme-based-cloning",
+    "href": "adpA.html#cloning-adpa-antibiotic-biosynthesis-regulator-for-overexpression-in-streptomyces-spectabilis-restriction-enzyme-based-cloning",
+    "title": "1  AdpA",
     "section": "",
-    "text": "This .qmd file introduces a Part of the Quarto book. We use the {#sec-REFERENCE} option to make it cross-referenceable elsewhere in the text, and the {.unnumbered} option to avoid giving it a section number.",
+    "text": "1.1.1 Identify the Streptomyces spectabilis adpA gene\nWe first need to identify the adpA gene sequence from S. spectabilis, the organism that we are working with.\nWe can do this using BLAST. An appropriate query in this case would be the adpA gene sequence from a better-characterised Streptomyces species, such as Streptomyces coelicolor A3(2).\nWe can retrieve this sequence from a database, such as StrepDB1 - other databases (such as NCBI) would work just as well.\n\nNavigate to StrepDB and search for the adpA gene. (Enter “adpA” in the search bar at the top left and click “Search Genes”).\n\n\n\n\n\n\n\nFigure 1.1: An Elephant\n\n\n\n\nA pop-up should appear (“SCO2792 araC-family transcriptional regulator” - click on that link to be redirected to the page for the adpA gene.)\n\n\n\n\n\n\n\nFigure 1.2: An Elephant\n\n\n\n\nRead through the page to check that you have the correct gene, then click the button “Nt seq” to retrieve the adpA nucleotide sequence. (Keep 0 for the amount of flanking region - you only want the sequence of the gene itself.)\n\nSelect the entire sequence of the gene and copy it (either using Ctrl+C or right-click and select “Copy” from the menu).\n\n\n\n\n\n\nFigure 1.3: An Elephant\n\n\n\n\nNavigate to the NCBI BLAST page and click on “Nucleotide BLAST”.\nOn the BLASTn page, paste the sequence you acquired from StrepDB into the “Query” sequence box.\n\nUnder “Choose Search Set”, keep the database as “Standard databases (nr etc)” and specify the organism (if you begin typing the name of your species (Streptomyces spectabilis), a menu should automatically appear with suggested search terms. We want to select “Streptomyces spectabilis (taxid:68270)).\n\n\n\n\n\n\nFigure 1.4: An Elephant\n\n\n\nClick the blue “BLAST” button and wait for your results.\n\nExamine the alignments. For the ATCC 27465 strain (the one we are working with), click on the “Genbank” link next to the range numbers (Figure 1.5).\n\n\n\n\n\n\n\nFigure 1.5: An Elephant\n\n\n\n\nCheck that this has taken you to the correct sequence (Streptomyces spectabilis sequence, product annotated as a helix-turn-helix domain-containing protein) and click the link to view the “FASTA” formatted sequence (Figure 1.6). Copy this sequence (Figure 1.7).\n\n\n\n\n\n\n\nFigure 1.6: An Elephant\n\n\n\n\n\n\n\n\n\nFigure 1.7: An Elephant\n\n\n\n\n\n1.1.2 Import Sequences into Benchling\n\nIn Benchling, create a new Project to organise your work. Click the + icon and select “Project”. Give your project an informative name and description (this will help you in the future, especially if you have multiple projects or complex work schemes.)\n\n\n\n\n\n\n\nFigure 1.8: An Elephant\n\n\n\n\nIn your new project, click the + icon again. This time, add a new DNA/RNA sequence (Figure 1.9).\n\n\n\n\n\n\n\nFigure 1.9: An Elephant\n\n\n\nGive the molecule an informative name, specify the type (DNA),topology (Linear), and project folder (your new project folder). Paste the sequence you obtained from NCBI into “Bases” and click “Create”.\n\n\n\n\n\n\nFigure 1.10: An Elephant\n\n\n\n\nNow, to check that your sequence is correct, you should perform the following checks:\n\nA. Check the translation of this sequence - select the entire sequence, click “Create” &gt; “translation” &gt; “Forward”\n\n\n\n\n\n\nFigure 1.11: An Elephant\n\n\n\nGive the translation a name (e.g., AdpA) and click “Save). The amino acid sequence should now appear under the nucleotide sequence (Figure 1.12). Check that there are no premature stop codons.\n\n\n\n\n\n\nFigure 1.12: An Elephant\n\n\n\nB. Compare the sequence against the Streptomyces coelicolor genome using BLAST (ensure that this is in fact the adpA homolog).\n\nNext, you will need to import the sequence of the vector we are using (pMS17).\n\nClick the + icon again &gt; DNA/RNA sequence &gt; Import DNA/RNA sequences (Figure 1.13).\n\n\n\n\n\n\nFigure 1.13: An Elephant\n\n\n\nSearch for pMS17 in the addgene database (Figure 1.14).\n\n\n\n\n\n\nFigure 1.14: An Elephant\n\n\n\nClick on the record for pMS17 and copy the URL for this page (https://www.addgene.org/127088/).\nIn Benchling, under “Import from database”, copy this URL into the search bar and click “Search” (Figure 1.15)\n\n\n\n\n\n\nFigure 1.15: An Elephant\n\n\n\nThis should bring up the correct record for pMS17, click “Import”.\n\n\n\n\n\n\nFigure 1.16: An Elephant\n\n\n\n\n\n1.1.3 Identify the restriction enzymes we can use for cloning adpA into pMS17\n\nWe need to clone downstream of the tet operator (so that the gene is expressed under control of this promoter). You can see the multiple cloning site (MCS) here by clicking on “Plasmid” and zooming in to look at the MCS (Figure 1.17)\n\n\n\n\n\n\n\nFigure 1.17: An Elephant\n\n\n\nIn this case, XbaI, EcoRV, NsiI, or KpnI look like possible choices.\nConfirm that these enzymes each only cut the vector once (click on the scissors icon in the right-hand pane and start typing an enzyme name - as shown in Figure 1.18, for XbaI, which only cuts once.)\n\n\n\n\n\n\nFigure 1.18: An Elephant\n\n\n\n\nCheck whether any of these enzymes cut the adpA sequence (if they do, we would not be able to use them for cloning in this way.)\n\nIn the adpA sequence, again click on the scissors icon on the right, and check each of the enzymes - as you see in Figure 1.19, KpnI does cut the sequence, and so must be avoided.\n\n\n\n\n\n\nFigure 1.19: An Elephant\n\n\n\nCheck whether the enzymes are compatible with one another using the NEB double digest checker. As you see in Figure 1.20, XbaI and EcoRV don’t have 100% activity in any of the NEB buffers (if you were using enzymes from another company, you would use their catalog/enzyme materials instead.) Similarly, XbaI and NsiI don’t have full activity in any of the buffers. However, EcoRV and NsiI have full activity in buffer r3.1 - so we will choose these two enzymes. (Note from the map of the NCS, EcoRV should be used for the forward primer and NsiI for the reverse primer.)\n\n\n\n\n\n\nFigure 1.20: An Elephant\n\n\n\n\n\n1.1.4 Design primers to amplify adpA with the desired restriction enzyme sites\n\nSelec tthe first 20-25 bases of the adpA sequence to create your forward primer (if possible, end on a C or a G nucleotide). Click create &gt; Primer &gt; Forward (Figure 1.21).\n\n\n\n\n\n\n\nFigure 1.21: An Elephant\n\n\n\nIn the primer design window that pops up, use the menu to select EcoRV to look up the cut site (GATATC) (Figure 1.22)\n\n\n\n\n\n\nFigure 1.22: An Elephant\n\n\n\nCopy and paste the GATATC EcoRV cut site at the beginning (5’ end) of your primer. You will also need to add some bases upstream of the EcoRV sequence (most restriciton enzymes do not cut well at the very end of a DNA fragment - you can look up the precise amount of overhang needed at NEB’s “Cleavage Close to the end of DNA Fragments” guide). (Note that the sequence you add here does not matter, as it will be cleaved away and not included in part of your final product - though of course it is best to avoid duplicating the restriction enzyme site itself.)\nBe sure to adjust the overhang to match the number of bases you have added (in this case, 14 - Figure 1.23)\n\n\n\n\n\n\nFigure 1.23: An Elephant\n\n\n\nGive the primer an informative name and click “Save Primer”, being sure to save it in the correct Project folder. It should now appear in your adpA sequence, as shown in Figure 1.24.\n\n\n\n\n\n\nFigure 1.24: An Elephant\n\n\n\n\nRepeat the above process to create your reverse primer, being sure to specify “Reverse” primer when you create it, and to choose the correct enzyme (NsiI)\nLink the two primers and perform an in silico PCR.\n\nThis is necessary so that we can use the two primers to perform in silico PCR with them.\nClick on the forward primer, then press the “Shift” key and then click on the reverse primer. This should highlight the primers and the sequence between them (Figure 1.25).\n\n\n\n\n\n\nFigure 1.25: An Elephant\n\n\n\nRight click on the highlighted sequence, and then from the pop-up menu, select “Link primers”\nThis should give you a pop-up menu, showing that the two primers are linked. Click on “Create PCR Product”.\nIn the pop-up menu, be sure that “Use primer bases instead of sequence (includes overhang if any)” is selected, and you will probably also wish to copy over “Annotations, translations, and primers” to preserve the translation that you entered earlier (Figure 1.26). Click “Copy”, and be sure to save the copy in the correct Project folder.\n\n\n\n\n\n\nFigure 1.26: An Elephant\n\n\n\n\n\n1.1.5 Perform in silico restriction digests\n\nDigest the insert sequence\n\nIn the adpA sequence, click the scissors icon, and then select the two enzymes that you wish to use to cut this sequence (EcoRV and NsiI) (Figure 1.27)\n\n\n\n\n\n\nFigure 1.27: An Elephant\n\n\n\nClick “Run digest”. This should generate 3 fragments (the tiny end overhangs, which are cut away, and the 1319 nucleotide fragment which contains the adpA sequence that we are cloning into pMS17. (Figure 1.28))\n\n\n\n\n\n\nFigure 1.28: An Elephant\n\n\n\n\nSimilarly, cut the pMS17 vecotr with EcoRV and NsiI - this should generate two fragments (a small 13 nt portion of the MCS, which is being cut away, and the larger (5876 nt) part of the vector, which we are cloning into - Figure 1.29).\n\n\n\n\n\n\n\nFigure 1.29: An Elephant\n\n\n\n\n\n1.1.6 Ligate the DNA fragments together\nAt the bottom right hand corner of the screen, click “Assembly” and then “Assembly Wizard”. From the pop-up menu, select “Digest and Ligate” as your Assembly Strategy, and then click “Start” (Figure 1.30). This should open a preview of your untitled assembly at the bottom of the screen (Figure 1.31)\n\n\n\n\n\n\nFigure 1.30: An Elephant\n\n\n\n\n\n\n\n\n\nFigure 1.31: An Elephant\n\n\n\nEnsure that you have selected the correct (larger) fragment of pMS17 that you wish to use for this cloning project. Click on “Backbone” in this preview, and then “Set from selection”.\npMS17 (5.9kb, cut by NsiI and EcoRV) should now appear in your assembly as the backbone (Figure 1.32).\n\n\n\n\n\n\nFigure 1.32: An Elephant\n\n\n\nSimilarly, select and set your NsiI-EcoRV digested adpA fragment as the insert (Figure 1.33)\n\n\n\n\n\n\nFigure 1.33: An Elephant\n\n\n\nClick “Done”. Then give your assembly a name (e.g. pMS17-adpA), and ensure that you are saving it in the correct folder.\nThis should generate a plasmid map of your pMS17-adpA construct (Figure 1.34). Check to make sure your adpA sequence is present in the plasmid and in the correct orientation with regards to the tet promoter (annotated by addgene as the tet operator).\n\n\n\n\n\n\nFigure 1.34: An Elephant",
     "crumbs": [
-      "Early Section"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>AdpA</span>"
     ]
   },
   {
-    "objectID": "early-section-topic.html",
-    "href": "early-section-topic.html",
-    "title": "2  Early Section Topic",
+    "objectID": "adpA.html#footnotes",
+    "href": "adpA.html#footnotes",
+    "title": "1  AdpA",
     "section": "",
-    "text": "This .qmd file represents some topic-related text. We use the {#sec-REFERENCE} option to make it cross-referenceable elsewhere in the text.",
+    "text": "a specialised database for Streptomyces genome information↩︎",
     "crumbs": [
-      "Early Section",
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Early Section Topic</span>"
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>AdpA</span>"
     ]
   },
   {
-    "objectID": "late-section.html",
-    "href": "late-section.html",
-    "title": "Late Section",
+    "objectID": "pET.html",
+    "href": "pET.html",
+    "title": "2  Differential stains - acid-fast staining",
     "section": "",
-    "text": "This .qmd file introduces a Part of the Quarto book. We use the {#sec-REFERENCE} option to make it cross-referenceable elsewhere in the text, and the {.unnumbered} option to avoid giving it a section number.",
+    "text": "2.1 Cloning PET hydrolase homologs for heterologous expression in Pseudomonas (Gibson assembly)",
     "crumbs": [
-      "Late Section"
-    ]
-  },
-  {
-    "objectID": "webr-example.html",
-    "href": "webr-example.html",
-    "title": "3  R Playground",
-    "section": "",
-    "text": "3.1 Introduction\nThis page provides a WebR cell for you to use as a playground to experiment with some example datasets. You can use this page to explore data management and visualisation in R.",
-    "crumbs": [
-      "Late Section",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>`R` Playground</span>"
-    ]
-  },
-  {
-    "objectID": "webr-example.html#playground",
-    "href": "webr-example.html#playground",
-    "title": "3  R Playground",
-    "section": "3.2 Playground",
-    "text": "3.2 Playground\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.",
-    "crumbs": [
-      "Late Section",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>`R` Playground</span>"
-    ]
-  },
-  {
-    "objectID": "webr-example.html#things-you-can-do",
-    "href": "webr-example.html#things-you-can-do",
-    "title": "3  R Playground",
-    "section": "3.3 Things you can do",
-    "text": "3.3 Things you can do\nThis WebR instance has three packages installed:\n\nggplot2\nGGally\ntidyverse\npalmerpenguins\n\nOpen the callout boxes below to see some examples you can try in the code cell above.\n\n\n\n\n\n\nPlay with data from a GitHub repository\n\n\n\n\n\nOne of our BM214 workshops involves a WebR-supported interactive exercise involving simulated reporter curves. We preload this data in the setup cell (see source code), and you can interact with it below with the code:\ndata &lt;- read.csv(\"reporter_curves.csv\")\nglimpse(data)\n\n\n\n\n\n\n\n\n\nInvestigate Palmer’s Penguins\n\n\n\n\n\nThe penguins dataset contains data about three different species of penguins. Take a look at the format of the dataset:\nglimpse(penguins)\nYou’ll see there are eight variables, including species, weight, sex, etc. - some of these variables are categorical (i.e. a category, like species), and others are continuous (i.e. numerical). You can see a visual overview of how the data is related using the plot() function:\nplot(penguins)\nWe can visualise the number of penguins of each species in a bar chart:\nfig &lt;- ggplot(penguins, aes(species, fill=species)) +\n         geom_bar()\nfig\nAnd break this down in a facet plot, by sex:\nfig &lt;- ggplot(penguins, aes(species, fill=species)) +\n         geom_bar() +\n         facet_wrap(~sex)\nfig\nWe can make a box and whisker plot of penguin body mass by species:\nfig &lt;- ggplot(penguins, aes(x=species, y=body_mass_g, fill=species)) +\n         geom_boxplot()\nfig\nAnd plot the body mass for each sex side-by-side\nfig &lt;- ggplot(penguins, aes(x=species, y=body_mass_g, fill=sex)) +\n         geom_boxplot()\nfig\nWe can investigate correlations, such as between body mass and flipper length:\nfig &lt;- ggplot(penguins, aes(x=body_mass_g, y=flipper_length_mm)) +\n         geom_point()\nfig\nWe can colour datapoints by species:\nfig &lt;- ggplot(penguins, aes(x=body_mass_g, y=flipper_length_mm, colour=species)) +\n         geom_point()\nfig\nAnd fit a linear regression to each species separately:\nfig &lt;- ggplot(penguins, aes(x=body_mass_g, y=flipper_length_mm, colour=species)) +\n         geom_point() +\n         geom_smooth(method=\"lm\")\nfig\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nR comes with a number of example datasets you can practice with, including:\n\nmtcars: fuel consumption and other statistic for 32 automobiles\nTitanic: information on the fate of passengers on the fatal maiden voyage of the ocean liner Titanic\n\nYou can see a full list by running the command\nlibrary(help = \"datasets\")",
-    "crumbs": [
-      "Late Section",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>`R` Playground</span>"
-    ]
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
-    "crumbs": [
-      "References"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Differential stains - acid-fast staining</span>"
     ]
   }
 ]

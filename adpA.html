@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Leighton Pritchard">
+
+<title>1&nbsp; AdpA – BM923 Synthetic Biology Workshop</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./pET.html" rel="next">
+<link href="./index.html" rel="prev">
+<link href="./icon_32.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-78faf54a06e50be45dc6d83ab59297a7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./adpA.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">AdpA</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">BM923 Synthetic Biology Workshop</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/mafeeney/BM923synbio" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./adpA.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">AdpA</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pET.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differential stains - acid-fast staining</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pkfA2RED.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Differential stains - acid-fast staining</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pkfA2Crispr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">pkfA2Crispr.html</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#cloning-adpa-antibiotic-biosynthesis-regulator-for-overexpression-in-streptomyces-spectabilis-restriction-enzyme-based-cloning" id="toc-cloning-adpa-antibiotic-biosynthesis-regulator-for-overexpression-in-streptomyces-spectabilis-restriction-enzyme-based-cloning" class="nav-link active" data-scroll-target="#cloning-adpa-antibiotic-biosynthesis-regulator-for-overexpression-in-streptomyces-spectabilis-restriction-enzyme-based-cloning"><span class="header-section-number">1.1</span> Cloning <em>adpA</em> (antibiotic biosynthesis regulator) for overexpression in <em>Streptomyces spectabilis</em> (Restriction Enzyme-based cloning)</a>
+  <ul class="collapse">
+  <li><a href="#identify-the-streptomyces-spectabilis-adpa-gene" id="toc-identify-the-streptomyces-spectabilis-adpa-gene" class="nav-link" data-scroll-target="#identify-the-streptomyces-spectabilis-adpa-gene"><span class="header-section-number">1.1.1</span> Identify the <em>Streptomyces spectabilis adpA</em> gene</a></li>
+  <li><a href="#import-sequences-into-benchling" id="toc-import-sequences-into-benchling" class="nav-link" data-scroll-target="#import-sequences-into-benchling"><span class="header-section-number">1.1.2</span> Import Sequences into Benchling</a></li>
+  <li><a href="#identify-the-restriction-enzymes-we-can-use-for-cloning-adpa-into-pms17" id="toc-identify-the-restriction-enzymes-we-can-use-for-cloning-adpa-into-pms17" class="nav-link" data-scroll-target="#identify-the-restriction-enzymes-we-can-use-for-cloning-adpa-into-pms17"><span class="header-section-number">1.1.3</span> Identify the restriction enzymes we can use for cloning <em>adpA</em> into pMS17</a></li>
+  <li><a href="#design-primers-to-amplify-adpa-with-the-desired-restriction-enzyme-sites" id="toc-design-primers-to-amplify-adpa-with-the-desired-restriction-enzyme-sites" class="nav-link" data-scroll-target="#design-primers-to-amplify-adpa-with-the-desired-restriction-enzyme-sites"><span class="header-section-number">1.1.4</span> Design primers to amplify adpA with the desired restriction enzyme sites</a></li>
+  <li><a href="#perform-in-silico-restriction-digests" id="toc-perform-in-silico-restriction-digests" class="nav-link" data-scroll-target="#perform-in-silico-restriction-digests"><span class="header-section-number">1.1.5</span> Perform <em>in silico</em> restriction digests</a></li>
+  <li><a href="#ligate-the-dna-fragments-together" id="toc-ligate-the-dna-fragments-together" class="nav-link" data-scroll-target="#ligate-the-dna-fragments-together"><span class="header-section-number">1.1.6</span> Ligate the DNA fragments together</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/mafeeney/BM923synbio/edit/main/adpA.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mafeeney/BM923synbio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">AdpA</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="cloning-adpa-antibiotic-biosynthesis-regulator-for-overexpression-in-streptomyces-spectabilis-restriction-enzyme-based-cloning" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="cloning-adpa-antibiotic-biosynthesis-regulator-for-overexpression-in-streptomyces-spectabilis-restriction-enzyme-based-cloning"><span class="header-section-number">1.1</span> Cloning <em>adpA</em> (antibiotic biosynthesis regulator) for overexpression in <em>Streptomyces spectabilis</em> (Restriction Enzyme-based cloning)</h2>
+<p>We wish to clone a regulator of antibiotic biosynthesis (<i>adpA</i>) under control of an inducible promoter (<i>tcp</i>p), in order to overexpress it to different levels and determine whether we can create strains that produce higher titers of antibiotics. This document outlines the steps that are necessary to construct the desired vector: you should follow along in your Benchling account.</p>
+<section id="identify-the-streptomyces-spectabilis-adpa-gene" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="identify-the-streptomyces-spectabilis-adpa-gene"><span class="header-section-number">1.1.1</span> Identify the <em>Streptomyces spectabilis adpA</em> gene</h3>
+<p>We first need to identify the <i>adpA</i> gene sequence from <i>S. spectabilis</i>, the organism that we are working with.</p>
+<p>We can do this using BLAST. An appropriate query in this case would be the <i>adpA</i> gene sequence from a better-characterised <i>Streptomyces</i> species, such as <i>Streptomyces coelicolor</i> A3(2).</p>
+<p>We can retrieve this sequence from a database, such as <a href="https://strepdb.streptomyces.org.uk/">StrepDB</a><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> - other databases (such as NCBI) would work just as well.</p>
+<ol type="1">
+<li>Navigate to StrepDB and search for the adpA gene. (Enter “adpA” in the search bar at the top left and click “Search Genes”).</li>
+</ol>
+<div id="fig-adpA1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: An Elephant
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>A pop-up should appear (“SCO2792 araC-family transcriptional regulator” - click on that link to be redirected to the page for the <em>adpA</em> gene.)</li>
+</ol>
+<div id="fig-adpA2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: An Elephant
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Read through the page to check that you have the correct gene, then click the button “Nt seq” to retrieve the <em>adpA</em> nucleotide sequence. (Keep 0 for the amount of flanking region - you only want the sequence of the gene itself.)</li>
+</ol>
+<p>Select the entire sequence of the gene and copy it (either using Ctrl+C or right-click and select “Copy” from the menu).</p>
+<div id="fig-adpA3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA3.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.3: An Elephant
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li><p>Navigate to the <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi">NCBI BLAST page</a> and click on “Nucleotide BLAST”.</p></li>
+<li><p>On the BLASTn page, paste the sequence you acquired from StrepDB into the “Query” sequence box.</p></li>
+</ol>
+<p>Under “Choose Search Set”, keep the database as “Standard databases (nr etc)” and specify the organism (if you begin typing the name of your species (Streptomyces spectabilis), a menu should automatically appear with suggested search terms. We want to select “Streptomyces spectabilis (taxid:68270)).</p>
+<div id="fig-adpA4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA4.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.4: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Click the blue “BLAST” button and wait for your results.</p>
+<ol start="6" type="1">
+<li>Examine the alignments. For the ATCC 27465 strain (the one we are working with), click on the “Genbank” link next to the range numbers (<a href="#fig-adpA5" class="quarto-xref">Figure&nbsp;<span>1.5</span></a>).</li>
+</ol>
+<div id="fig-adpA5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA5.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.5: An Elephant
+</figcaption>
+</figure>
+</div>
+<ol start="7" type="1">
+<li>Check that this has taken you to the correct sequence (Streptomyces spectabilis sequence, product annotated as a helix-turn-helix domain-containing protein) and click the link to view the “FASTA” formatted sequence (<a href="#fig-adpA6" class="quarto-xref">Figure&nbsp;<span>1.6</span></a>). Copy this sequence (<a href="#fig-adpA7" class="quarto-xref">Figure&nbsp;<span>1.7</span></a>).</li>
+</ol>
+<div id="fig-adpA6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA6.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.6: An Elephant
+</figcaption>
+</figure>
+</div>
+<div id="fig-adpA7" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA7.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.7: An Elephant
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="import-sequences-into-benchling" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="import-sequences-into-benchling"><span class="header-section-number">1.1.2</span> Import Sequences into Benchling</h3>
+<ol type="1">
+<li>In Benchling, create a new Project to organise your work. Click the + icon and select “Project”. Give your project an informative name and description (this will help you in the future, especially if you have multiple projects or complex work schemes.)</li>
+</ol>
+<div id="fig-adpA8" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA8.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.8: An Elephant
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>In your new project, click the + icon again. This time, add a new DNA/RNA sequence (<a href="#fig-adpA9" class="quarto-xref">Figure&nbsp;<span>1.9</span></a>).</li>
+</ol>
+<div id="fig-adpA9" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA9.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.9: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Give the molecule an informative name, specify the type (DNA),topology (Linear), and project folder (your new project folder). Paste the sequence you obtained from NCBI into “Bases” and click “Create”.</p>
+<div id="fig-adpA10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA10.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.10: An Elephant
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Now, to check that your sequence is correct, you should perform the following checks:</li>
+</ol>
+<p>A. Check the translation of this sequence - select the entire sequence, click “Create” &gt; “translation” &gt; “Forward”</p>
+<div id="fig-adpA11" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA11.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.11: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Give the translation a name (e.g., AdpA) and click “Save). The amino acid sequence should now appear under the nucleotide sequence (<a href="#fig-adpA12" class="quarto-xref">Figure&nbsp;<span>1.12</span></a>). Check that there are no premature stop codons.</p>
+<div id="fig-adpA12" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA12.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.12: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>B. Compare the sequence against the <i>Streptomyces coelicolor</i> genome using BLAST (ensure that this is in fact the adpA homolog).</p>
+<ol start="4" type="1">
+<li>Next, you will need to import the sequence of the vector we are using (pMS17).</li>
+</ol>
+<p>Click the + icon again &gt; DNA/RNA sequence &gt; Import DNA/RNA sequences (<a href="#fig-adpA13" class="quarto-xref">Figure&nbsp;<span>1.13</span></a>).</p>
+<div id="fig-adpA13" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA13.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.13: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Search for pMS17 in the <a href="https://www.addgene.org/">addgene database</a> (<a href="#fig-adpA14" class="quarto-xref">Figure&nbsp;<span>1.14</span></a>).</p>
+<div id="fig-adpA14" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA14.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.14: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Click on the record for pMS17 and copy the URL for this page (https://www.addgene.org/127088/).</p>
+<p>In Benchling, under “Import from database”, copy this URL into the search bar and click “Search” (<a href="#fig-adpA15" class="quarto-xref">Figure&nbsp;<span>1.15</span></a>)</p>
+<div id="fig-adpA15" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA15.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.15: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>This should bring up the correct record for pMS17, click “Import”.</p>
+<div id="fig-adpA16" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA16.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.16: An Elephant
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="identify-the-restriction-enzymes-we-can-use-for-cloning-adpa-into-pms17" class="level3" data-number="1.1.3">
+<h3 data-number="1.1.3" class="anchored" data-anchor-id="identify-the-restriction-enzymes-we-can-use-for-cloning-adpa-into-pms17"><span class="header-section-number">1.1.3</span> Identify the restriction enzymes we can use for cloning <em>adpA</em> into pMS17</h3>
+<ol type="1">
+<li>We need to clone downstream of the tet operator (so that the gene is expressed under control of this promoter). You can see the multiple cloning site (MCS) here by clicking on “Plasmid” and zooming in to look at the MCS (<a href="#fig-adpA17" class="quarto-xref">Figure&nbsp;<span>1.17</span></a>)</li>
+</ol>
+<div id="fig-adpA17" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA17.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.17: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>In this case, XbaI, EcoRV, NsiI, or KpnI look like possible choices.</p>
+<p>Confirm that these enzymes each only cut the vector once (click on the scissors icon in the right-hand pane and start typing an enzyme name - as shown in <a href="#fig-adpA18" class="quarto-xref">Figure&nbsp;<span>1.18</span></a>, for XbaI, which only cuts once.)</p>
+<div id="fig-adpA18" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA18.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.18: An Elephant
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Check whether any of these enzymes cut the adpA sequence (if they do, we would not be able to use them for cloning in this way.)</li>
+</ol>
+<p>In the adpA sequence, again click on the scissors icon on the right, and check each of the enzymes - as you see in <a href="#fig-adpA19" class="quarto-xref">Figure&nbsp;<span>1.19</span></a>, KpnI does cut the sequence, and so must be avoided.</p>
+<div id="fig-adpA19" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA19.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.19: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Check whether the enzymes are compatible with one another using the NEB double digest checker. As you see in <a href="#fig-adpA20" class="quarto-xref">Figure&nbsp;<span>1.20</span></a>, XbaI and EcoRV don’t have 100% activity in any of the NEB buffers (if you were using enzymes from another company, you would use their catalog/enzyme materials instead.) Similarly, XbaI and NsiI don’t have full activity in any of the buffers. However, EcoRV and NsiI have full activity in buffer r3.1 - so we will choose these two enzymes. (Note from the map of the NCS, EcoRV should be used for the forward primer and NsiI for the reverse primer.)</p>
+<div id="fig-adpA20" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA20.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.20: An Elephant
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="design-primers-to-amplify-adpa-with-the-desired-restriction-enzyme-sites" class="level3" data-number="1.1.4">
+<h3 data-number="1.1.4" class="anchored" data-anchor-id="design-primers-to-amplify-adpa-with-the-desired-restriction-enzyme-sites"><span class="header-section-number">1.1.4</span> Design primers to amplify adpA with the desired restriction enzyme sites</h3>
+<ol type="1">
+<li>Selec tthe first 20-25 bases of the adpA sequence to create your forward primer (if possible, end on a C or a G nucleotide). Click create &gt; Primer &gt; Forward (<a href="#fig-adpA21" class="quarto-xref">Figure&nbsp;<span>1.21</span></a>).</li>
+</ol>
+<div id="fig-adpA21" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA21.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.21: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>In the primer design window that pops up, use the menu to select EcoRV to look up the cut site (GATATC) (<a href="#fig-adpA22" class="quarto-xref">Figure&nbsp;<span>1.22</span></a>)</p>
+<div id="fig-adpA22" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA22-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA22.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA22-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.22: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Copy and paste the GATATC EcoRV cut site at the beginning (5’ end) of your primer. You will also need to add some bases upstream of the EcoRV sequence (most restriciton enzymes do not cut well at the very end of a DNA fragment - you can look up the precise amount of overhang needed at <a href="https://www.neb.com/en-gb/tools-and-resources/usage-guidelines/cleavage-close-to-the-end-of-dna-fragments">NEB’s “Cleavage Close to the end of DNA Fragments” guide</a>). (Note that the sequence you add here does not matter, as it will be cleaved away and not included in part of your final product - though of course it is best to avoid duplicating the restriction enzyme site itself.)</p>
+<p>Be sure to adjust the overhang to match the number of bases you have added (in this case, 14 - <a href="#fig-adpA23" class="quarto-xref">Figure&nbsp;<span>1.23</span></a>)</p>
+<div id="fig-adpA23" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA23-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA23.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA23-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.23: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Give the primer an informative name and click “Save Primer”, being sure to save it in the correct Project folder. It should now appear in your adpA sequence, as shown in <a href="#fig-adpA24" class="quarto-xref">Figure&nbsp;<span>1.24</span></a>.</p>
+<div id="fig-adpA24" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA24-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA24.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA24-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.24: An Elephant
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li><p>Repeat the above process to create your reverse primer, being sure to specify “Reverse” primer when you create it, and to choose the correct enzyme (NsiI)</p></li>
+<li><p>Link the two primers and perform an <em>in silico</em> PCR.</p></li>
+</ol>
+<p>This is necessary so that we can use the two primers to perform <em>in silico</em> PCR with them.</p>
+<p>Click on the forward primer, then press the “Shift” key and then click on the reverse primer. This should highlight the primers and the sequence between them (<a href="#fig-adpA25" class="quarto-xref">Figure&nbsp;<span>1.25</span></a>).</p>
+<div id="fig-adpA25" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA25-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA25.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA25-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.25: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Right click on the highlighted sequence, and then from the pop-up menu, select “Link primers”</p>
+<p>This should give you a pop-up menu, showing that the two primers are linked. Click on “Create PCR Product”.</p>
+<p>In the pop-up menu, be sure that “Use primer bases instead of sequence (includes overhang if any)” is selected, and you will probably also wish to copy over “Annotations, translations, and primers” to preserve the translation that you entered earlier (<a href="#fig-adpA26" class="quarto-xref">Figure&nbsp;<span>1.26</span></a>). Click “Copy”, and be sure to save the copy in the correct Project folder.</p>
+<div id="fig-adpA26" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA26-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA26.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA26-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.26: An Elephant
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="perform-in-silico-restriction-digests" class="level3" data-number="1.1.5">
+<h3 data-number="1.1.5" class="anchored" data-anchor-id="perform-in-silico-restriction-digests"><span class="header-section-number">1.1.5</span> Perform <em>in silico</em> restriction digests</h3>
+<ol type="1">
+<li>Digest the insert sequence</li>
+</ol>
+<p>In the adpA sequence, click the scissors icon, and then select the two enzymes that you wish to use to cut this sequence (EcoRV and NsiI) (<a href="#fig-adpA27" class="quarto-xref">Figure&nbsp;<span>1.27</span></a>)</p>
+<div id="fig-adpA27" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA27-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA27.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA27-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.27: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Click “Run digest”. This should generate 3 fragments (the tiny end overhangs, which are cut away, and the 1319 nucleotide fragment which contains the adpA sequence that we are cloning into pMS17. (<a href="#fig-adpA28" class="quarto-xref">Figure&nbsp;<span>1.28</span></a>))</p>
+<div id="fig-adpA28" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA28-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA28.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA28-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.28: An Elephant
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Similarly, cut the pMS17 vecotr with EcoRV and NsiI - this should generate two fragments (a small 13 nt portion of the MCS, which is being cut away, and the larger (5876 nt) part of the vector, which we are cloning into - <a href="#fig-adpA29" class="quarto-xref">Figure&nbsp;<span>1.29</span></a>).</li>
+</ol>
+<div id="fig-adpA29" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA29-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA29.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA29-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.29: An Elephant
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="ligate-the-dna-fragments-together" class="level3" data-number="1.1.6">
+<h3 data-number="1.1.6" class="anchored" data-anchor-id="ligate-the-dna-fragments-together"><span class="header-section-number">1.1.6</span> Ligate the DNA fragments together</h3>
+<p>At the bottom right hand corner of the screen, click “Assembly” and then “Assembly Wizard”. From the pop-up menu, select “Digest and Ligate” as your Assembly Strategy, and then click “Start” (<a href="#fig-adpA30" class="quarto-xref">Figure&nbsp;<span>1.30</span></a>). This should open a preview of your untitled assembly at the bottom of the screen (<a href="#fig-adpA31" class="quarto-xref">Figure&nbsp;<span>1.31</span></a>)</p>
+<div id="fig-adpA30" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA30-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA30.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA30-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.30: An Elephant
+</figcaption>
+</figure>
+</div>
+<div id="fig-adpA31" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA31.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA31-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.31: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Ensure that you have selected the correct (larger) fragment of pMS17 that you wish to use for this cloning project. Click on “Backbone” in this preview, and then “Set from selection”.</p>
+<p>pMS17 (5.9kb, cut by NsiI and EcoRV) should now appear in your assembly as the backbone (<a href="#fig-adpA32" class="quarto-xref">Figure&nbsp;<span>1.32</span></a>).</p>
+<div id="fig-adpA32" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA32.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA32-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.32: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Similarly, select and set your NsiI-EcoRV digested adpA fragment as the insert (<a href="#fig-adpA33" class="quarto-xref">Figure&nbsp;<span>1.33</span></a>)</p>
+<div id="fig-adpA33" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA33-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA33.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA33-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.33: An Elephant
+</figcaption>
+</figure>
+</div>
+<p>Click “Done”. Then give your assembly a name (e.g.&nbsp;pMS17-adpA), and ensure that you are saving it in the correct folder.</p>
+<p>This should generate a plasmid map of your pMS17-adpA construct (<a href="#fig-adpA34" class="quarto-xref">Figure&nbsp;<span>1.34</span></a>). Check to make sure your adpA sequence is present in the plasmid and in the correct orientation with regards to the tet promoter (annotated by addgene as the tet operator).</p>
+<div id="fig-adpA34" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-adpA34-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/adpA34.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-adpA34-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.34: An Elephant
+</figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>a specialised database for Streptomyces genome information<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./pET.html" class="pagination-link" aria-label="Differential stains - acid-fast staining">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differential stains - acid-fast staining</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>BM923 Synthetic Biology Workshop - Dr.&nbsp;Morgan Feeney</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/mafeeney/BM923synbio/edit/main/adpA.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mafeeney/BM923synbio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
