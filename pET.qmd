@@ -1,0 +1,5 @@
+---
+title: "Differential stains - acid-fast staining"
+---
+
+## Cloning PET hydrolase homologs for heterologous expression in Pseudomonas (Gibson assembly)

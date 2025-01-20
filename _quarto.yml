@@ -36,17 +36,11 @@ book:
   # [E] CHAPTERS AND SECTIONS
   chapters:
     - index.qmd
-    - intro.qmd
-
-    - part: early-section.qmd
-      chapters: 
-        - early-section-topic.qmd
+    - adpA.qmd
+    - pET.qmd
+    - pkfA2RED.qmd
+    - pkfA2Crispr.qmd
     
-    - part: late-section.qmd
-      chapters: 
-        - webr-example.qmd
-    
-    - references.qmd
 
 # Location of BibTeX format reference file; may not need to be changed
 bibliography: references.bib

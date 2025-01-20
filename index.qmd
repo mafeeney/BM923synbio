@@ -1,7 +1,27 @@
 # Preface {.unnumbered}
 
-This is a Quarto book, generated using the `sipbs-compbiol-book-template` GitHub template.
+This is a Quarto book, written to accompany the BM923 Bioprocessing workshop on Synthetic Biology. This book will go through the 4 worked examples mentioned in the workshop:
 
-The Preface page is intended as a frontispiece with brief introductory information about the book and, maybe, its authors.
+* Cloning *adpA* (antibiotic biosynthesis regulator) for overexpression in Streptomyces (RE-based cloning)
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+* Cloning PET hydrolase homologs for heterologous expression in Pseudomonas (Gibson assembly)
+
+* Deleting *pkfA2* from *Streptomyces coelicolor* using lambda-red recombineering (“Redirect”) 
+
+* Deleting *pkfA2* from *Streptomyces coelicolor* using CRISPR (pCrispomyces2)
+
+## How to use this book: 
+
+You can navigate this book using the links provided in the sidebar at the left, or by using the arrows at the bottom right of each page to progress. 
+
+You can work through the four examples in any order.
+
+## Requirements for this workshop:
+
+You will need to sign up for a free <a href="https://www.benchling.com/">Benchling</a> account for this workshop.
+
+You should be able to use most internet web browsers to complete this workshop, but please note that it was written and tested using Google Chrome. If you encounter issues with using another browser, consider switching to a different browser and please also inform Dr. Feeney of the issue (with a detailed description of what went wrong).
+
+## Any issues?
+
+This Quarto book is hosted in GitHub; if you encounter any issues (typos, broken links, technical issues), or have any suggestions for improving this workshop, please kindly <a href="https://github.com/mafeeney/BM923synbio/issues">raise a GitHub issue</a> or speak with Dr. Feeney directly.
