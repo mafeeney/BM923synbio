@@ -342,15 +342,25 @@ Figure&nbsp;2.11: Specifying an NCBI accession number to import
 </figcaption>
 </figure>
 </div>
-<p>This should give you the plasmid sequence for the plasmid (<span class="quarto-unresolved-ref">?fig-pet12</span>). Note the constitutive promoter (Pc) that we want to use for our cloning project. There is a multiple cloning site (MCS) just downstream of it, which contains EcoRI, BclI, AflIII etc. sites … we have chosen above to use the EcoRI site (but note that we could have chosen any of the sites in the MCS).</p>
-<p><img src="0images/pet12.png" id="fig-pet12" class="img-fluid" alt="Plasmid map of the vector imported into Benchling"> You can confirm the presence of the EcoRI site manually as well (click on the scissors icon in the right-hand menu and then search for “EcoRI” (<a href="#fig-pet13" class="quarto-xref">Figure&nbsp;<span>2.12</span></a>).</p>
+<p>This should give you the plasmid sequence for the plasmid (<a href="#fig-pet12" class="quarto-xref">Figure&nbsp;<span>2.12</span></a>). Note the constitutive promoter (Pc) that we want to use for our cloning project. There is a multiple cloning site (MCS) just downstream of it, which contains EcoRI, BclI, AflIII etc. sites … we have chosen above to use the EcoRI site (but note that we could have chosen any of the sites in the MCS).</p>
+<div id="fig-pet12" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet12.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.12: Plasmid map of the vector imported into Benchling
+</figcaption>
+</figure>
+</div>
+<p>You can confirm the presence of the EcoRI site manually as well (click on the scissors icon in the right-hand menu and then search for “EcoRI” (<a href="#fig-pet13" class="quarto-xref">Figure&nbsp;<span>2.13</span></a>).</p>
 <div id="fig-pet13" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pet13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/pet13.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.12: Confirming the EcoRI site in your imported vector sequence
+Figure&nbsp;2.13: Confirming the EcoRI site in your imported vector sequence
 </figcaption>
 </figure>
 </div>
@@ -358,7 +368,7 @@ Figure&nbsp;2.12: Confirming the EcoRI site in your imported vector sequence
 <section id="in-silico-design-of-your-gibson-assembly" class="level3" data-number="2.1.4">
 <h3 data-number="2.1.4" class="anchored" data-anchor-id="in-silico-design-of-your-gibson-assembly"><span class="header-section-number">2.1.4</span> In silico design of your Gibson Assembly</h3>
 <ol type="1">
-<li>Click on “Assembly” in the bottom right hand corner of your screen &gt; “Assembly Wizard”, and then in the pop-up window Pick Assembly Strategy, select “Gibson” (<a href="#fig-pet14" class="quarto-xref">Figure&nbsp;<span>2.13</span></a>).</li>
+<li>Click on “Assembly” in the bottom right hand corner of your screen &gt; “Assembly Wizard”, and then in the pop-up window Pick Assembly Strategy, select “Gibson” (<a href="#fig-pet14" class="quarto-xref">Figure&nbsp;<span>2.14</span></a>).</li>
 </ol>
 <div id="fig-pet14" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -366,7 +376,7 @@ Figure&nbsp;2.12: Confirming the EcoRI site in your imported vector sequence
 <img src="0images/pet14.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.13: Choosing an Assembly Strategy
+Figure&nbsp;2.14: Choosing an Assembly Strategy
 </figcaption>
 </figure>
 </div>
@@ -375,80 +385,80 @@ Figure&nbsp;2.13: Choosing an Assembly Strategy
 <li>In the pop-up menu, add the name of your plasmid that you are aiming to create (Tip: choose something informative, e.g.&nbsp;pMMPc-PET), and be sure to specify the correct project folder.</li>
 </ol>
 <p>Check the other specifications: you are assembling two fragments, to create a circular construct, and you will be producing fragments by “Digest with restriction enzyme”. The defualts for min/max length and min Tm of your binding regions are fine.</p>
-<p>When you are happy with the specifications, click “Save” (<a href="#fig-pet15" class="quarto-xref">Figure&nbsp;<span>2.14</span></a>)</p>
+<p>When you are happy with the specifications, click “Save” (<a href="#fig-pet15" class="quarto-xref">Figure&nbsp;<span>2.15</span></a>)</p>
 <div id="fig-pet15" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pet15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/pet15.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.14: Specifying DNA assembly parameters
+Figure&nbsp;2.15: Specifying DNA assembly parameters
 </figcaption>
 </figure>
 </div>
-<p>You should now get an assembly tool that allows you to specify the fragments you will use (<a href="#fig-pet16" class="quarto-xref">Figure&nbsp;<span>2.15</span></a>).</p>
+<p>You should now get an assembly tool that allows you to specify the fragments you will use (<a href="#fig-pet16" class="quarto-xref">Figure&nbsp;<span>2.16</span></a>).</p>
 <div id="fig-pet16" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pet16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/pet16.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.15: Specifying the DNA fragments to use in your assembly
+Figure&nbsp;2.16: Specifying the DNA fragments to use in your assembly
 </figcaption>
 </figure>
 </div>
-<p>For BIN 1 (Backbone), click the + symbol &gt; Open sequences &gt; KC544266 (<a href="#fig-pet17" class="quarto-xref">Figure&nbsp;<span>2.16</span></a>)</p>
+<p>For BIN 1 (Backbone), click the + symbol &gt; Open sequences &gt; KC544266 (<a href="#fig-pet17" class="quarto-xref">Figure&nbsp;<span>2.17</span></a>)</p>
 <div id="fig-pet17" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pet17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/pet17.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.16: Adding the vector backbone
+Figure&nbsp;2.17: Adding the vector backbone
 </figcaption>
 </figure>
 </div>
-<p>Specify the 5’ enzyme and 3’ enzyme you will use (EcoRI) and the EcoRI site on the map as the Start and End sites (by clicking on View: Plasmid map to see the EcoRI site if necessary) (<a href="#fig-pet18" class="quarto-xref">Figure&nbsp;<span>2.17</span></a>), then click “Add”.</p>
+<p>Specify the 5’ enzyme and 3’ enzyme you will use (EcoRI) and the EcoRI site on the map as the Start and End sites (by clicking on View: Plasmid map to see the EcoRI site if necessary) (<a href="#fig-pet18" class="quarto-xref">Figure&nbsp;<span>2.18</span></a>), then click “Add”.</p>
 <div id="fig-pet18" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pet18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/pet18.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.17: Specifying the vector start and end and enzyme details
+Figure&nbsp;2.18: Specifying the vector start and end and enzyme details
 </figcaption>
 </figure>
 </div>
-<p>For BIN 2 (Insert 1), change the method to “Add new overlaps using PCR” and then click the + sign to add your fragment &gt; Open sequences &gt; the name of your codon optimized sequence (<a href="#fig-pet19" class="quarto-xref">Figure&nbsp;<span>2.18</span></a>).</p>
+<p>For BIN 2 (Insert 1), change the method to “Add new overlaps using PCR” and then click the + sign to add your fragment &gt; Open sequences &gt; the name of your codon optimized sequence (<a href="#fig-pet19" class="quarto-xref">Figure&nbsp;<span>2.19</span></a>).</p>
 <div id="fig-pet19" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pet19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/pet19.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.18: Adding the insert to your assembly
+Figure&nbsp;2.19: Adding the insert to your assembly
 </figcaption>
 </figure>
 </div>
-<p>This should bring up your correct fragment to insert (<a href="#fig-pet20" class="quarto-xref">Figure&nbsp;<span>2.19</span></a>). Click “add”.</p>
+<p>This should bring up your correct fragment to insert (<a href="#fig-pet20" class="quarto-xref">Figure&nbsp;<span>2.20</span></a>). Click “add”.</p>
 <div id="fig-pet20" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pet20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/pet20.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.19: Adding the insert fragment
+Figure&nbsp;2.20: Adding the insert fragment
 </figcaption>
 </figure>
 </div>
-<p>Click “Autopopulate” in the “Constructs” box (<a href="#fig-pet21" class="quarto-xref">Figure&nbsp;<span>2.20</span></a>), and then “Assemble” in the top right hand corner”.</p>
+<p>Click “Autopopulate” in the “Constructs” box (<a href="#fig-pet21" class="quarto-xref">Figure&nbsp;<span>2.21</span></a>), and then “Assemble” in the top right hand corner”.</p>
 <div id="fig-pet21" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-pet21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/pet21.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.20: Autopopulate the constructs in your assembly
+Figure&nbsp;2.21: Autopopulate the constructs in your assembly
 </figcaption>
 </figure>
 </div>
