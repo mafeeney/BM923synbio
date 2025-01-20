@@ -92,7 +92,7 @@ You can confirm the presence of the EcoRI site manually as well (click on the sc
 
 1. Click on "Assembly" in the bottom right hand corner of your screen > "Assembly Wizard", and then in the pop-up window Pick Assembly Strategy, select "Gibson" (@fig-pet14).
 
-![Choosing an Assembly Strategy](0images/pet14.png){#fig-pet13}
+![Choosing an Assembly Strategy](0images/pet14.png){#fig-pet14}
 
 This should bring up a message encouraging you to try the new combinatorial assembly tool - click that link.
 
