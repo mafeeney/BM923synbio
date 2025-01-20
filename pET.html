@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>2&nbsp; Differential stains - acid-fast staining – BM923 Synthetic Biology Workshop</title>
+<title>2&nbsp; PET hydrolase homolog cloning – BM923 Synthetic Biology Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pET.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differential stains - acid-fast staining</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pET.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">PET hydrolase homolog cloning</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pET.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differential stains - acid-fast staining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">PET hydrolase homolog cloning</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -156,7 +156,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#cloning-pet-hydrolase-homologs-for-heterologous-expression-in-pseudomonas-gibson-assembly" id="toc-cloning-pet-hydrolase-homologs-for-heterologous-expression-in-pseudomonas-gibson-assembly" class="nav-link active" data-scroll-target="#cloning-pet-hydrolase-homologs-for-heterologous-expression-in-pseudomonas-gibson-assembly"><span class="header-section-number">2.1</span> Cloning PET hydrolase homologs for heterologous expression in Pseudomonas (Gibson assembly)</a></li>
+  <li><a href="#cloning-pet-hydrolase-homologs-for-heterologous-expression-in-pseudomonas-gibson-assembly" id="toc-cloning-pet-hydrolase-homologs-for-heterologous-expression-in-pseudomonas-gibson-assembly" class="nav-link active" data-scroll-target="#cloning-pet-hydrolase-homologs-for-heterologous-expression-in-pseudomonas-gibson-assembly"><span class="header-section-number">2.1</span> Cloning PET hydrolase homologs for heterologous expression in Pseudomonas (Gibson assembly)</a>
+  <ul class="collapse">
+  <li><a href="#rationale-for-design-choices" id="toc-rationale-for-design-choices" class="nav-link" data-scroll-target="#rationale-for-design-choices"><span class="header-section-number">2.1.1</span> Rationale for design choices</a></li>
+  <li><a href="#obtaining-the-sequence-for-the-pet-hydrolase" id="toc-obtaining-the-sequence-for-the-pet-hydrolase" class="nav-link" data-scroll-target="#obtaining-the-sequence-for-the-pet-hydrolase"><span class="header-section-number">2.1.2</span> Obtaining the sequence for the PET hydrolase</a></li>
+  <li><a href="#obtaining-the-sequence-for-the-plasmid" id="toc-obtaining-the-sequence-for-the-plasmid" class="nav-link" data-scroll-target="#obtaining-the-sequence-for-the-plasmid"><span class="header-section-number">2.1.3</span> Obtaining the sequence for the plasmid</a></li>
+  <li><a href="#in-silico-design-of-your-gibson-assembly" id="toc-in-silico-design-of-your-gibson-assembly" class="nav-link" data-scroll-target="#in-silico-design-of-your-gibson-assembly"><span class="header-section-number">2.1.4</span> In silico design of your Gibson Assembly</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/mafeeney/BM923synbio/edit/main/pET.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mafeeney/BM923synbio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -165,7 +171,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Differential stains - acid-fast staining</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">PET hydrolase homolog cloning</span></h1>
 </div>
 
 
@@ -184,11 +190,277 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="cloning-pet-hydrolase-homologs-for-heterologous-expression-in-pseudomonas-gibson-assembly" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="cloning-pet-hydrolase-homologs-for-heterologous-expression-in-pseudomonas-gibson-assembly"><span class="header-section-number">2.1</span> Cloning PET hydrolase homologs for heterologous expression in Pseudomonas (Gibson assembly)</h2>
+<p>In this example we will clone the pET hydrolase from <em>Ideonella sakaiensis</em> into an expression vector (pMMPc) with a strong constitutive promoter for expression in <em>Pseudomonas putida</em>, using Gibson assembly.</p>
+<section id="rationale-for-design-choices" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="rationale-for-design-choices"><span class="header-section-number">2.1.1</span> Rationale for design choices</h3>
+<p>Strain choice: <em>Pseudomonas putida</em> is tolerant to solvents, has a robust metabolism and capacity to withstand stresses, and has been used as a chassis organism for industrial biotechnology purposes previously, making it an ideal choice for our PET hydrolase expression system. (c.f. Weimer et al 2020 - https://doi.org/10.1007/s00253-020-10811-9)</p>
+<p>Vector choice: Need a plasmid that will replicate in Pseudomonas, with a strong constitutive promoter. Xu et al (2013) created some appropriate vectors, c.f. doi: 10.1128/AEM.03746-12 - we will choose pMMPc (Genbank accession KC544266).</p>
+<p>Choice of PET hydrolase: <em>Ideonella sakaiensis</em> has been shown to degrade PET (and can use it as a sole carbon/energy source) doi:10.1126/science.aad6359. We will begin by cloning the well-characterized PET hydrolase from this organism (further optimisation of the hydrolase properties using gene engineering, or exploration of potentially more active/useful homologs may be necessary in the future).</p>
+</section>
+<section id="obtaining-the-sequence-for-the-pet-hydrolase" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="obtaining-the-sequence-for-the-pet-hydrolase"><span class="header-section-number">2.1.2</span> Obtaining the sequence for the PET hydrolase</h3>
+<ol type="1">
+<li>Search the UniProt database for “PET hydrolase” (<a href="#fig-pet1" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>).</li>
+</ol>
+<div id="fig-pet1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Searching the UniProt database
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Click on the search result that you want (in our case, the PET hydrolase from <em>Ideonella sakaiensis</em>/<em>Piscinibacter sakaiensis</em>). This should take you to the page for this protein, with information about its function, etc.</li>
+</ol>
+<div id="fig-pet2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: The I. sakaiensis PET Hydrolase entry in UniProt
+</figcaption>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>The uniprot accession # for this PET hydrolase is A0A0K8P6T7, which you will need to import the data into Benchling.</li>
+</ol>
+<p>In Benchling, you may wish to start a new project (You can do this by clicking on the + icon in the left-hand toolbar, selecting “Project”, and then giving your new project an informative name and description, then clicking “Create project”.)</p>
+<p>To import the sequence of the PET hydrolase, click on the + icon, then click AA sequence &gt; Import AA sequence (<a href="#fig-pet3" class="quarto-xref">Figure&nbsp;<span>2.3</span></a>)</p>
+<div id="fig-pet3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet3.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Importing an AA sequence into Benchling
+</figcaption>
+</figure>
+</div>
+<p>Click “Import from database”, specify the Accession number (A0A0K8P6T7), Database (UniProt), and Project folder (the folder you just created), then click “Import” (<a href="#fig-pet4" class="quarto-xref">Figure&nbsp;<span>2.4</span></a>).</p>
+<div id="fig-pet4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet4.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.4: Specifying the Uniprot accession to import
+</figcaption>
+</figure>
+</div>
+<p>You should then be able to open the imported sequence and observe the amino acid sequence and its features (<a href="#fig-pet5" class="quarto-xref">Figure&nbsp;<span>2.5</span></a>).</p>
+<div id="fig-pet5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet5.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.5: The PET hydrolase sequence imported into Benchling
+</figcaption>
+</figure>
+</div>
+<ol start="4" type="1">
+<li>You will now need to create a reverse translation of the amino acid sequence to derive the coding sequence necessary for its production.</li>
+</ol>
+<p>Select the entire sequence, right click on it, and then then click on “Back translate”.</p>
+<p>Specify the options to optimize your back translation: you wish to codon optimize for expression in <em>Pseudomonas putida</em>, and you should add EcoRI as a cut site to avoid (we will be using this site to cut the plasmid for our Gibson assembly reaction.) (<a href="#fig-pet6" class="quarto-xref">Figure&nbsp;<span>2.6</span></a>)</p>
+<div id="fig-pet6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet6.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.6: Specifying options to reverse translate/back translate the PET hydrolase AA sequence
+</figcaption>
+</figure>
+</div>
+<p>Click “Preview optimization” when you are happy with the settings, and then “Save as new sequence”, making sure to save it in the correct Project folder.</p>
+<ol start="6" type="1">
+<li>Quality check and modify the sequence as necessary:</li>
+</ol>
+<p>A. Select the entirety of the sequence, then click Create &gt; Translation &gt; Forward to examine the translation of your new nucleotide sequence (<a href="#fig-pet7" class="quarto-xref">Figure&nbsp;<span>2.7</span></a>).</p>
+<div id="fig-pet7" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet7.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.7: The PET hydrolase sequence in Benchling, with translation added
+</figcaption>
+</figure>
+</div>
+<p>In this case, note that while there is a start codon present, there is no stop codon - we need to add one.</p>
+<p>Right click at the end of the sequence, then select “Insert bases” and add a stop codon (any of the 3 stop codons is fine).</p>
+<div id="fig-pet8" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet8.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.8: Adding a stop codon to the sequence
+</figcaption>
+</figure>
+</div>
+<p>B. You may also wish to add an RBS at the beginning of the sequence (it doesn’t look like there is one present in the vector that we’re using). You can do this using the same method (right click, “Insert bases”, add the desired bases. You could use for example RBS 33 from Aparicio et al 2020, which has been shown to give high expression in <em>P. putida</em> (https://doi.org/10.1016/j.isci.2020.100946) - <u>TAAGGAGGT<u>AAAAACAT<b>ATG</b> (RBS underlined, start in bold))</u></u></p><u><u>
+<div id="fig-pet9" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet9.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.9: Adding an RBS to the sequence
+</figcaption>
+</figure>
+</div>
+<p>C. You can double-check that this sequence is correct by confirming (e.g., using BLASTx) that it matches the <em>I. sakaiensis</em> PET hydrolase protein.</p>
+<p>This is the sequence that you would then have synthesized (e.g., by GenScript or another DNA synthesis company) for use in your Gibson assembly reaction.</p>
+</u></u></section><u><u>
+<section id="obtaining-the-sequence-for-the-plasmid" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="obtaining-the-sequence-for-the-plasmid"><span class="header-section-number">2.1.3</span> Obtaining the sequence for the plasmid</h3>
+<p>The NCBI accession number for the plasmid we wish to use is KC544266. You can import this into Benchling by clicking the + icon, then clicking DNA/RNA sequence &gt; Import DNA RNA sequences.</p>
+<div id="fig-pet10" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet10.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.10: Importing a DNA sequence into Benchling
+</figcaption>
+</figure>
+</div>
+<p>In the pop-up window, click “Import from database” and paste or type the accession number into the “Sequence” box, then click “Search”, and then “Import” (<a href="#fig-pet11" class="quarto-xref">Figure&nbsp;<span>2.11</span></a>).</p>
+<div id="fig-pet11" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet11.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.11: Specifying an NCBI accession number to import
+</figcaption>
+</figure>
+</div>
+<p>This should give you the plasmid sequence for the plasmid (<span class="quarto-unresolved-ref">?fig-pet12</span>). Note the constitutive promoter (Pc) that we want to use for our cloning project. There is a multiple cloning site (MCS) just downstream of it, which contains EcoRI, BclI, AflIII etc. sites … we have chosen above to use the EcoRI site (but note that we could have chosen any of the sites in the MCS).</p>
+<p><img src="0images/pet12.png" id="fig-pet12" class="img-fluid" alt="Plasmid map of the vector imported into Benchling"> You can confirm the presence of the EcoRI site manually as well (click on the scissors icon in the right-hand menu and then search for “EcoRI” (<a href="#fig-pet13" class="quarto-xref">Figure&nbsp;<span>2.13</span></a>).</p>
+<div id="fig-pet13" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet13.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.12: Confirming the EcoRI site in your imported vector sequence
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="in-silico-design-of-your-gibson-assembly" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="in-silico-design-of-your-gibson-assembly"><span class="header-section-number">2.1.4</span> In silico design of your Gibson Assembly</h3>
+<ol type="1">
+<li>Click on “Assembly” in the bottom right hand corner of your screen &gt; “Assembly Wizard”, and then in the pop-up window Pick Assembly Strategy, select “Gibson” (<span class="quarto-unresolved-ref">?fig-pet14</span>).</li>
+</ol>
+<div id="fig-pet13" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet14.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.13: Choosing an Assembly Strategy
+</figcaption>
+</figure>
+</div>
+<p>This should bring up a message encouraging you to try the new combinatorial assembly tool - click that link.</p>
+<ol start="2" type="1">
+<li>In the pop-up menu, add the name of your plasmid that you are aiming to create (Tip: choose something informative, e.g.&nbsp;pMMPc-PET), and be sure to specify the correct project folder.</li>
+</ol>
+<p>Check the other specifications: you are assembling two fragments, to create a circular construct, and you will be producing fragments by “Digest with restriction enzyme”. The defualts for min/max length and min Tm of your binding regions are fine.</p>
+<p>When you are happy with the specifications, click “Save” (<a href="#fig-pet15" class="quarto-xref">Figure&nbsp;<span>2.14</span></a>)</p>
+<div id="fig-pet15" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet15.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.14: Specifying DNA assembly parameters
+</figcaption>
+</figure>
+</div>
+<p>You should now get an assembly tool that allows you to specify the fragments you will use (<a href="#fig-pet16" class="quarto-xref">Figure&nbsp;<span>2.15</span></a>).</p>
+<div id="fig-pet16" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet16.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.15: Specifying the DNA fragments to use in your assembly
+</figcaption>
+</figure>
+</div>
+<p>For BIN 1 (Backbone), click the + symbol &gt; Open sequences &gt; KC544266 (<a href="#fig-pet17" class="quarto-xref">Figure&nbsp;<span>2.16</span></a>)</p>
+<div id="fig-pet17" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet17.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.16: Adding the vector backbone
+</figcaption>
+</figure>
+</div>
+<p>Specify the 5’ enzyme and 3’ enzyme you will use (EcoRI) and the EcoRI site on the map as the Start and End sites (by clicking on View: Plasmid map to see the EcoRI site if necessary) (<a href="#fig-pet18" class="quarto-xref">Figure&nbsp;<span>2.17</span></a>), then click “Add”.</p>
+<div id="fig-pet18" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet18.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.17: Specifying the vector start and end and enzyme details
+</figcaption>
+</figure>
+</div>
+<p>For BIN 2 (Insert 1), change the method to “Add new overlaps using PCR” and then click the + sign to add your fragment &gt; Open sequences &gt; the name of your codon optimized sequence (<a href="#fig-pet19" class="quarto-xref">Figure&nbsp;<span>2.18</span></a>).</p>
+<div id="fig-pet19" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet19.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet19-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.18: Adding the insert to your assembly
+</figcaption>
+</figure>
+</div>
+<p>This should bring up your correct fragment to insert (<a href="#fig-pet20" class="quarto-xref">Figure&nbsp;<span>2.19</span></a>). Click “add”.</p>
+<div id="fig-pet20" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet20.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet20-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.19: Adding the insert fragment
+</figcaption>
+</figure>
+</div>
+<p>Click “Autopopulate” in the “Constructs” box (<a href="#fig-pet21" class="quarto-xref">Figure&nbsp;<span>2.20</span></a>), and then “Assemble” in the top right hand corner”.</p>
+<div id="fig-pet21" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pet21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/pet21.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pet21-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.20: Autopopulate the constructs in your assembly
+</figcaption>
+</figure>
+</div>
+<p>Work through the Assemble DNA menu, specifying the folder where you would like to save your constructs, fragments, and primers (<span class="quarto-unresolved-ref">?fig-pet22</span>).</p>
+<p><img src="0images/pet22.png" id="fig-pet22" class="img-fluid" alt="Specifying the locations to save your constructs, fragments, and primers"> Examine your final construct (<span class="quarto-unresolved-ref">?fig-pet23</span>) to verify the construct has placed your PET hydrolase gene in the correct orientation relative to the Pc promoter, and to see the sequences of the primers that you would need to order to carry out this Gibson assembly (<span class="quarto-unresolved-ref">?fig-pet24</span>).</p>
+<p><img src="0images/pet23.png" id="fig-pet23" class="img-fluid" alt="Viewing your final construct"> <img src="0images/pet24.png" id="fig-pet24" class="img-fluid" alt="Viewing the primers needed for your assembly"></p>
 
 
 </section>
+</u></u></section><u><u>
 
-</main> <!-- /main -->
+</u></u></main><u><u> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -618,7 +890,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav>
-</div> <!-- /content -->
+</u></u></div><u><u> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
@@ -636,4 +908,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+</u></u></body></html>
