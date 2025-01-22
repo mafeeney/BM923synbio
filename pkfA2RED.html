@@ -8,7 +8,7 @@
 
 <meta name="author" content="Leighton Pritchard">
 
-<title>3&nbsp; Differential stains - acid-fast staining – BM923 Synthetic Biology Workshop</title>
+<title>3&nbsp; Deleting pkfA2 (lambda Red-based recombineering) – BM923 Synthetic Biology Workshop</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pkfA2RED.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Differential stains - acid-fast staining</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pkfA2RED.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Deleting pkfA2 (lambda Red-based recombineering)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./adpA.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">AdpA</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Cloning AdpA</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -137,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./pkfA2RED.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Differential stains - acid-fast staining</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Deleting pkfA2 (lambda Red-based recombineering)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -151,15 +151,24 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#deleting-pkfa2-using-a-lambda-red-based-recombineering-approach-redirect" id="toc-deleting-pkfa2-using-a-lambda-red-based-recombineering-approach-redirect" class="nav-link active" data-scroll-target="#deleting-pkfa2-using-a-lambda-red-based-recombineering-approach-redirect"><span class="header-section-number">3.1</span> Deleting <em>pkfA2</em> using a lambda Red-based recombineering approach (“Redirect”)</a>
+  <ul class="collapse">
+  <li><a href="#design-primers-to-amplify-the-apramycin-resistance-cassette-with-homologous-regions-to-delete-pkfa2" id="toc-design-primers-to-amplify-the-apramycin-resistance-cassette-with-homologous-regions-to-delete-pkfa2" class="nav-link" data-scroll-target="#design-primers-to-amplify-the-apramycin-resistance-cassette-with-homologous-regions-to-delete-pkfa2"><span class="header-section-number">3.1.1</span> Design primers to amplify the apramycin resistance cassette with homologous regions to delete <em>pkfA2</em></a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/mafeeney/BM923synbio/edit/main/pkfA2RED.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mafeeney/BM923synbio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Differential stains - acid-fast staining</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Deleting pkfA2 (lambda Red-based recombineering)</span></h1>
 </div>
 
 
@@ -176,8 +185,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="deleting-pkfa2-using-a-lambda-red-based-recombineering-approach-redirect" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="deleting-pkfa2-using-a-lambda-red-based-recombineering-approach-redirect"><span class="header-section-number">3.1</span> Deleting <em>pkfA2</em> using a lambda Red-based recombineering approach (“Redirect”)</h2>
+<p>We wish to delete the gene encoding a phosphofructokinase (<em>pfkA2</em>) from <em>Streptomyces coelicolor</em> A3(2), as previous work has shown that this deletion leads to increased production of certain antibiotics (Borodina et al 2008 - https://doi.org/10.1074/jbc.M803105200).</p>
+<p>This document outlines the steps that are necessary to construct for deleting <em>pkfA2</em> using the “Redirect” method of Gust et al (detailed protocol <a href="https://streptomyces.org.uk/redirect/protocol_V1_4.pdf">here</a>): you should follow along with the design steps, e.g.&nbsp;in your Benchling account.</p>
+<section id="design-primers-to-amplify-the-apramycin-resistance-cassette-with-homologous-regions-to-delete-pkfa2" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="design-primers-to-amplify-the-apramycin-resistance-cassette-with-homologous-regions-to-delete-pkfa2"><span class="header-section-number">3.1.1</span> Design primers to amplify the apramycin resistance cassette with homologous regions to delete <em>pkfA2</em></h3>
+<p>We will amplify the apramycin resistance cassette from one of the template plasmids (we will use pIJ773); with the PCR primers we design, we will add flanking sequences to the primers that allow us to target <em>pkfA2</em> for deletion (<a href="#fig-Red1" class="quarto-xref">Figure&nbsp;<span>3.1</span></a>)</p>
+<div id="fig-Red1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Red1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/Red1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Red1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Designing PCR primers for Streptomyces Redirect (image credit: Redirect manual)
+</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li>Obtain the pfkA2 (SCO5426) sequence from StrepDB with 39 flanking nucleotides to either side:</li>
+</ol>
+<p>Navigate to <a href="https://strepdb.streptomyces.org.uk/">StrepDB</a> and search for pkfA2 (<a href="#fig-Red2" class="quarto-xref">Figure&nbsp;<span>3.2</span></a>)</p>
+<div id="fig-Red2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Red2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/Red2.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Red2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: Searching for pkfA2 in StrepDB
+</figcaption>
+</figure>
+</div>
+<p>Obtain the nucleotide sequence with 39 flanking nucleotides (<a href="#fig-Red3" class="quarto-xref">Figure&nbsp;<span>3.3</span></a>). You will want to copy this sequence over into Benchling.</p>
+<div id="fig-Red3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Red3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/Red3.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Red3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.3: The pkfA2 nucleotide sequence, with 39 flanking nucleotides
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>In a new project (click the + symbol in the left-hand menu, then click Project, and give your project an informative name and description), add a new DNA sequence.</li>
+</ol>
+<p>Do this by clicking the + icon again, then clicking “DNA/RNA sequence”, and then clicking “New DNA/RNA sequence” (<a href="#fig-Red4" class="quarto-xref">Figure&nbsp;<span>3.4</span></a>)</p>
+<div id="fig-Red4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Red4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/Red4.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Red4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.4: Designing PCR primers for Streptomyces Redirect (image credit: Redirect manual)
+</figcaption>
+</figure>
+</div>
+<p>Specify the nucleotide type as “DNA”, the topology as “Linear”, and the project folder to your correct folder name, and then paste the sequence you obtained from StrepDB (pkfA2 with the 39 flanking nucleotides) into the box labelled “Bases” (You do not need to include the FASTA header). Then click the “Create” button.</p>
+<p>This should load a window showing your pkfA2 sequence. You may find it useful, for downstream steps, to add the translation and annotation of the open reading frame. You can do this by selecting the sequence of the gene (remember that there should be 39 nucleotides either side - you want to select just the region from the start codon to the stop codon (inclusive)), as shown in <a href="#fig-Red5" class="quarto-xref">Figure&nbsp;<span>3.5</span></a>.</p>
+<div id="fig-Red5" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Red5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/Red5.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Red5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.5: Highlighting the pkfA2 coding sequence in Benchling
+</figcaption>
+</figure>
+</div>
+<p>Click: Create &gt; Translation &gt; Forward, give the translation an informative name (e.g., pkfA2), and click “Save” (<a href="#fig-Red6" class="quarto-xref">Figure&nbsp;<span>3.6</span></a>).</p>
+<div id="fig-Red6" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Red6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/Red6.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Red6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.6: The pkfA2 sequence with translation added in Benchling
+</figcaption>
+</figure>
+</div>
+<p>You can now use this sequence to design your primers.</p>
+<p>The upstream primer should be: upstream nucleotides (copy and paste the start codon + 39 nucleotides upstream of it) + the P1 sequence (from the Redirect manual) 5’ GGCTCACCGGTGTCAACAGCGAGCAGGAGACACAGCACGATG ATTCCGGGGATCCGTCGACC</p>
+<p>The downstream primer should be: the <em>reverse complement</em> of the stop codon + 39 nucleotides downstream + the P2 sequence (from the Redirect manual).</p>
+<p>To obtain the reverse complement, you can select the nucleotides (<a href="#fig-Red7" class="quarto-xref">Figure&nbsp;<span>3.7</span></a>), then right click on the selected region. Click “Copy special” &gt; “Reverse complement” and then click on the DNA reverse complement sequence to copy it (<a href="#fig-Red8" class="quarto-xref">Figure&nbsp;<span>3.8</span></a>). (You can, of course, use any other sensible method to obtain the reverse complement of your nucleotide sequence.)</p>
+<div id="fig-Red7" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Red7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/Red7.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Red7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.7: Highlighting the sequence for the pkfA2 deletion reverse primer
+</figcaption>
+</figure>
+</div>
+<div id="fig-Red8" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Red8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/Red8.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Red8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.8: Copying the reverse complement sequence for the pkfA2 deletion reverse primer
+</figcaption>
+</figure>
+</div>
+<p>reverse complement of TAGGCCTCCCCTCTAGGGGTGCCTCTCGACCGCCGTCCAGAA + P2 sequence</p>
+<p>–&gt; the final primer sequence should be 5’ TTCTGGACGGCGGTCGAGAGGCACCCCTAGAGGGGAGGCCTA TGTAGGCTGGAGCTGCTTC</p>
+<p>Amplify the pIJ773 cassette using these forward and reverse primers, then this can be used as a template for the recombineering (performed in an <em>E. coli</em> strain carrying the lambda red genes, and a cosmid carrying the <em>pfkA2</em> gene (we know from StrepDB that this would be the St6A11 cosmid (as shown in the graphical gene map on the SCO5426 StrepDB page)).</p>
+<p>The mutant cosmids will be transferred to our Streptomyces coelicolor strain via intrageneric conjugation (following the Redirect protocol), and we will select for recombinants (apramycin resistance) and screen for double-crossovers by PCR. (These PCR primers can be designed as you would any standard set of PCR primers: just a pair of primers to amplify the <em>pkfA2</em> locus, and you will note a size difference in the PCR product based on the presence of the wild-type <em>pkfA2</em> locus or the recombinant <em>pkfA2::apra</em> locus).[Of course, it is always advisable to perform further checks to confirm that your recombinant strain is correct; and for most standard genetic analyses, you would normally want to complement the recombinant strain as normal.]</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -617,7 +735,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/mafeeney/BM923synbio/edit/main/pkfA2RED.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mafeeney/BM923synbio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/mafeeney/BM923synbio/edit/main/pkfA2RED.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/mafeeney/BM923synbio/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
