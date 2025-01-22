@@ -1,3 +1,65 @@
 ---
-title: "Differential stains - acid-fast staining"
+title: "Deleting pkfA2 (lambda Red-based recombineering)"
 ---
+
+## Deleting *pkfA2* using a lambda Red-based recombineering approach ("Redirect")
+
+We wish to delete the gene encoding a phosphofructokinase (*pfkA2*) from *Streptomyces coelicolor* A3(2), as previous work has shown that this deletion leads to increased production of certain antibiotics (Borodina et al 2008 - https://doi.org/10.1074/jbc.M803105200). 
+
+This document outlines the steps that are necessary to construct for deleting *pkfA2* using the "Redirect" method of Gust et al (detailed protocol <a href="https://streptomyces.org.uk/redirect/protocol_V1_4.pdf">here</a>): you should follow along with the design steps, e.g. in your Benchling account.
+
+### Design primers to amplify the apramycin resistance cassette with homologous regions to delete *pkfA2*
+
+We will amplify the apramycin resistance cassette from one of the template plasmids (we will use pIJ773); with the PCR primers we design, we will add flanking sequences to the primers that allow us to target *pkfA2* for deletion (@fig-Red1)
+
+![Designing PCR primers for Streptomyces Redirect (image credit: Redirect manual)](0images/Red1.png){#fig-Red1}
+
+1. Obtain the pfkA2 (SCO5426) sequence from StrepDB with 39 flanking nucleotides to either side: 
+
+Navigate to <a href="https://strepdb.streptomyces.org.uk/">StrepDB</a> and search for pkfA2 (@fig-Red2)
+
+![Searching for pkfA2 in StrepDB](0images/Red2.png){#fig-Red2}
+
+Obtain the nucleotide sequence with 39 flanking nucleotides (@fig-Red3). You will want to copy this sequence over into Benchling.
+
+![The pkfA2 nucleotide sequence, with 39 flanking nucleotides](0images/Red3.png){#fig-Red3}
+
+2. In a new project (click the + symbol in the left-hand menu, then click Project, and give your project an informative name and description), add a new DNA sequence. 
+
+Do this by clicking the + icon again, then clicking "DNA/RNA sequence", and then clicking "New DNA/RNA sequence" (@fig-Red4)
+
+![Designing PCR primers for Streptomyces Redirect (image credit: Redirect manual)](0images/Red4.png){#fig-Red4}
+
+Specify the nucleotide type as "DNA", the topology as "Linear", and the project folder to your correct folder name, and then paste the sequence you obtained from StrepDB (pkfA2 with the 39 flanking nucleotides) into the box labelled "Bases" (You do not need to include the FASTA header). Then click the "Create" button.
+
+This should load a window showing your pkfA2 sequence. You may find it useful, for downstream steps, to add the translation and annotation of the open reading frame. You can do this by selecting the sequence of the gene (remember that there should be 39 nucleotides either side - you want to select just the region from the start codon to the stop codon (inclusive)), as shown in @fig-Red5. 
+
+![Highlighting the pkfA2 coding sequence in Benchling](0images/Red5.png){#fig-Red5}
+
+Click: Create > Translation > Forward, give the translation an informative name (e.g., pkfA2), and click "Save" (@fig-Red6).
+
+![The pkfA2 sequence with translation added in Benchling](0images/Red6.png){#fig-Red6}
+
+
+You can now use this sequence to design your primers.
+
+The upstream primer should be: upstream nucleotides (copy and paste the start codon + 39 nucleotides upstream of it) + the P1 sequence (from the Redirect manual)
+5' GGCTCACCGGTGTCAACAGCGAGCAGGAGACACAGCACGATG ATTCCGGGGATCCGTCGACC 
+
+The downstream primer should be: the *reverse complement* of the stop codon + 39 nucleotides downstream + the P2 sequence (from the Redirect manual). 
+
+To obtain the reverse complement, you can select the nucleotides (@fig-Red7), then right click on the selected region. Click "Copy special" > "Reverse complement" and then click on the DNA reverse complement sequence to copy it (@fig-Red8). (You can, of course, use any other sensible method to obtain the reverse complement of your nucleotide sequence.)
+
+![Highlighting the sequence for the pkfA2 deletion reverse primer](0images/Red7.png){#fig-Red7}
+
+
+![Copying the reverse complement sequence for the pkfA2 deletion reverse primer](0images/Red8.png){#fig-Red8}
+
+reverse complement of TAGGCCTCCCCTCTAGGGGTGCCTCTCGACCGCCGTCCAGAA + P2 sequence
+
+--> the final primer sequence should be 5' TTCTGGACGGCGGTCGAGAGGCACCCCTAGAGGGGAGGCCTA TGTAGGCTGGAGCTGCTTC
+
+
+Amplify the pIJ773 cassette using these forward and reverse primers, then this can be used as a template for the recombineering (performed in an *E. coli* strain carrying the lambda red genes, and a cosmid carrying the *pfkA2* gene (we know from StrepDB that this would be the St6A11 cosmid (as shown in the graphical gene map on the SCO5426 StrepDB page)). 
+
+The mutant cosmids will be transferred to our Streptomyces coelicolor strain via intrageneric conjugation (following the Redirect protocol), and we will select for recombinants (apramycin resistance) and screen for double-crossovers by PCR. (These PCR primers can be designed as you would any standard set of PCR primers: just a pair of primers to amplify the *pkfA2* locus, and you will note a size difference in the PCR product based on the presence of the wild-type *pkfA2* locus or the recombinant *pkfA2::apra* locus).[Of course, it is always advisable to perform further checks to confirm that your recombinant strain is correct; and for most standard genetic analyses, you would normally want to complement the recombinant strain as normal.]

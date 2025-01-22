@@ -1,5 +1,5 @@
 ---
-title: "AdpA"
+title: "Cloning AdpA"
 ---
 
 ## Cloning *adpA* (antibiotic biosynthesis regulator) for overexpression in *Streptomyces spectabilis* (Restriction Enzyme-based cloning)
@@ -50,7 +50,7 @@ Click the blue "BLAST" button and wait for your results.
 
 ### Import Sequences into Benchling
 
-1. In Benchling, create a new Project to organise your work. Click the + icon and select "Project" (@adpA8). Give your project an informative name and description (this will help you in the future, especially if you have multiple projects or complex work schemes.)
+1. In Benchling, create a new Project to organise your work. Click the + icon and select "Project" (@fig-adpA8). Give your project an informative name and description (this will help you in the future, especially if you have multiple projects or complex work schemes.)
 
 ![Starting a new Benchling project](0images/adpA8.png){#fig-adpA8}
 

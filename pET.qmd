@@ -20,7 +20,7 @@ Choice of PET hydrolase: *Ideonella sakaiensis* has been shown to degrade PET (a
 
 ![Searching the UniProt database](0images/pet1.png){#fig-pet1}
 
-2. Click on the search result that you want (in our case, the PET hydrolase from *Ideonella sakaiensis*/*Piscinibacter sakaiensis*). This should take you to the page for this protein, with information about its function, etc. 
+2. Click on the search result that you want (in our case, the PET hydrolase from *Ideonella sakaiensis*/*Piscinibacter sakaiensis*). This should take you to the page for this protein, with information about its function, etc (@fig-pet2). 
 
 ![The I. sakaiensis PET Hydrolase entry in UniProt](0images/pet2.png){#fig-pet2}
 
