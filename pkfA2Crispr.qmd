@@ -7,6 +7,7 @@ We wish to delete the gene encoding a phosphofructokinase (*pfkA2*) from *Strept
 This document outlines the necessary steps for designing a strategy to delete *pkfA2* using the CRISPR method of Cobb et al 2015 (doi 10.1021/sb500351f), see <a href="https://actinobase.org/index.php/CRISPR/Cas9-mediated_genome_editing">detailed protocol from Actinobase</a>:   and also <a href="https://media.addgene.org/data/plasmids/61/61737/61737-attachment_rH8ZSJ2mRhaS.pdf">pCRISPomyces-1 and -2 Plasmid Assembly Protocol</a> for more details on primer design.
 
 ![Overview of the CRISPR deletion strategy using pCRISPomyces-2 (in this example, used to delete the *red* cluster)](0images/crispr1.png){#fig-crispr1}
+
 You will need to 1) select and clone a guide RNA (gRNA) into pCRISPomyces-2, and 2) select and clone the regions flanking the gene that you wish to delete (*pkfA2* into this plasmid).
 
 ## gRNA cloning
@@ -42,6 +43,8 @@ Highlight this sequence, and then (you will have to close the search menu), clic
 Name your translation (e.g., pkfA2) and then click "Save". The amino acid translation of *pkfA2* should appear below the sequence (@fig-crispr4). 
 
 ![The pkfA2 sequence, with translation added, in Benchling](0images/crispr4.png){#fig-crispr4}
+
+
 ### Select a guide RNA sequence 
 
 You want to select a guide sequence according to the following part of the pCRISPomyces-1 and 2 plasmid assembly protocol:
@@ -79,7 +82,7 @@ You will also want to create a repair template (which the cells will use to repa
 
 ### Import the pCrispomyces-2 plasmid sequence from Addgene
 
-1. Go to the <a href="https://www.addgene.org/">Addgene</a> website and search for the pCrispomyces-2 plasmid. You should find it as <a href=https://www.addgene.org/61737/>Plasmid #61737</a>. Copy the URL to this page.
+1. Go to the <a href="https://www.addgene.org/">Addgene</a> website and search for the pCrispomyces-2 plasmid. You should find it as <a href=https://www.addgene.org/61737/>Plasmid #61737</a>. Copy the URL to this page (https://www.addgene.org/61737/).
 
 2. In Benchling, click the + icon in the left-hand bar, and then click "DNA/RNA sequence" > "Import DNA/RNA sequence".
 

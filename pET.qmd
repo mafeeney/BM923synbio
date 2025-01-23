@@ -132,8 +132,11 @@ Click "Autopopulate" in the "Constructs" box (@fig-pet21), and then "Assemble" i
 Work through the Assemble DNA menu, specifying the folder where you would like to save your constructs, fragments, and primers (@fig-pet22). 
 
 ![Specifying the locations to save your constructs, fragments, and primers](0images/pet22.png){#fig-pet22}
+
 Examine your final construct (@fig-pet23) to verify the construct has placed your PET hydrolase gene in the correct orientation relative to the Pc promoter, and to see the sequences of the primers that you would need to order to carry out this Gibson assembly (@fig-pet24).
 
 ![Viewing your final construct](0images/pet23.png){#fig-pet23}
 
 ![Viewing the primers needed for your assembly](0images/pet24.png){#fig-pet24}
+
+
