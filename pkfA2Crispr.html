@@ -158,6 +158,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#grna-cloning" id="toc-grna-cloning" class="nav-link active" data-scroll-target="#grna-cloning"><span class="header-section-number">4.1</span> gRNA cloning</a>
   <ul class="collapse">
   <li><a href="#import-the-pkfa2-sequence-into-benchling-so-that-you-can-work-with-it" id="toc-import-the-pkfa2-sequence-into-benchling-so-that-you-can-work-with-it" class="nav-link" data-scroll-target="#import-the-pkfa2-sequence-into-benchling-so-that-you-can-work-with-it"><span class="header-section-number">4.1.1</span> Import the <em>pkfA2</em> sequence into Benchling so that you can work with it</a></li>
+  <li><a href="#select-a-guide-rna-sequence" id="toc-select-a-guide-rna-sequence" class="nav-link" data-scroll-target="#select-a-guide-rna-sequence"><span class="header-section-number">4.1.2</span> Select a guide RNA sequence</a></li>
   </ul></li>
   <li><a href="#repair-template-construction" id="toc-repair-template-construction" class="nav-link" data-scroll-target="#repair-template-construction"><span class="header-section-number">4.2</span> Repair template construction</a>
   <ul class="collapse">
@@ -191,7 +192,17 @@ ul.task-list li input[type="checkbox"] {
 
 <p>We wish to delete the gene encoding a phosphofructokinase (<em>pfkA2</em>) from <em>Streptomyces coelicolor</em> A3(2), as previous work has shown that this deletion leads to increased production of certain antibiotics (Borodina et al 2008 - https://doi.org/10.1074/jbc.M803105200).</p>
 <p>This document outlines the necessary steps for designing a strategy to delete <em>pkfA2</em> using the CRISPR method of Cobb et al 2015 (doi 10.1021/sb500351f), see <a href="https://actinobase.org/index.php/CRISPR/Cas9-mediated_genome_editing">detailed protocol from Actinobase</a>: and also <a href="https://media.addgene.org/data/plasmids/61/61737/61737-attachment_rH8ZSJ2mRhaS.pdf">pCRISPomyces-1 and -2 Plasmid Assembly Protocol</a> for more details on primer design.</p>
-<p><img src="0images/crispr1.png" id="fig-crispr1" class="img-fluid" alt="Overview of the CRISPR deletion strategy using pCRISPomyces-2 (in this example, used to delete the red cluster)"> You will need to 1) select and clone a guide RNA (gRNA) into pCRISPomyces-2, and 2) select and clone the regions flanking the gene that you wish to delete (<em>pkfA2</em> into this plasmid).</p>
+<div id="fig-crispr1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-crispr1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/crispr1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Overview of the CRISPR deletion strategy using pCRISPomyces-2 (in this example, used to delete the <em>red</em> cluster)
+</figcaption>
+</figure>
+</div>
+<p>You will need to 1) select and clone a guide RNA (gRNA) into pCRISPomyces-2, and 2) select and clone the regions flanking the gene that you wish to delete (<em>pkfA2</em> into this plasmid).</p>
 <section id="grna-cloning" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="grna-cloning"><span class="header-section-number">4.1</span> gRNA cloning</h2>
 <section id="import-the-pkfa2-sequence-into-benchling-so-that-you-can-work-with-it" class="level3" data-number="4.1.1">
@@ -200,59 +211,71 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li>Obtain the pfkA2 (SCO5426) sequence from StrepDB with 1000 flanking nucleotides to either side:</li>
 </ol>
-<p>Navigate to <a href="https://strepdb.streptomyces.org.uk/">StrepDB</a> and search for pkfA2 (<a href="#fig-Red2" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>)</p>
+<p>Navigate to <a href="https://strepdb.streptomyces.org.uk/">StrepDB</a> and search for pkfA2 (<a href="#fig-Red2" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>)</p>
 <div id="fig-Red2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Red2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/Red2.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Red2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.1: Searching for pkfA2 in StrepDB
+Figure&nbsp;4.2: Searching for pkfA2 in StrepDB
 </figcaption>
 </figure>
 </div>
-<p>Obtain the nucleotide sequence with 1000 flanking nucleotides (<a href="#fig-crispr2" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>). You will want to copy this sequence over into Benchling.</p>
+<p>Obtain the nucleotide sequence with 1000 flanking nucleotides (<a href="#fig-crispr2" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>). You will want to copy this sequence over into Benchling.</p>
 <div id="fig-crispr2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr2.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.2: The pkfA2 sequence, with 1000 flanking nucleotides, in StrepDB
+Figure&nbsp;4.3: The pkfA2 sequence, with 1000 flanking nucleotides, in StrepDB
 </figcaption>
 </figure>
 </div>
 <ol start="2" type="1">
 <li>In a new project (click the + symbol in the left-hand menu, then click Project, and give your project an informative name and description), add a new DNA sequence.</li>
 </ol>
-<p>Do this by clicking the + icon again, then clicking “DNA/RNA sequence”, and then clicking “New DNA/RNA sequence” (<a href="#fig-Red4" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>)</p>
+<p>Do this by clicking the + icon again, then clicking “DNA/RNA sequence”, and then clicking “New DNA/RNA sequence” (<a href="#fig-Red4" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>)</p>
 <div id="fig-Red4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Red4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/Red4.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Red4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.3: Adding a new DNA/RNA sequence in Benchling
+Figure&nbsp;4.4: Adding a new DNA/RNA sequence in Benchling
 </figcaption>
 </figure>
 </div>
 <ol start="3" type="1">
 <li>In your new pkfA2 sequence in Benchling, you will want to find and annotate the <em>pkfA2</em> open reading frame (for your own convenience/ease of downstream steps).</li>
 </ol>
-<p>You can do this by copying the blue portion of the sequence from StrepDB (<a href="#fig-crispr2" class="quarto-xref">Figure&nbsp;<span>4.2</span></a>), and searching for it in your Benchling sequence (Ctrl+F, then paste in your copied sequence) - this should find the <em>pkfA2</em> open reading frame (<a href="#fig-crispr3" class="quarto-xref">Figure&nbsp;<span>4.4</span></a>).</p>
+<p>You can do this by copying the blue portion of the sequence from StrepDB (<a href="#fig-crispr2" class="quarto-xref">Figure&nbsp;<span>4.3</span></a>), and searching for it in your Benchling sequence (Ctrl+F, then paste in your copied sequence) - this should find the <em>pkfA2</em> open reading frame (<a href="#fig-crispr3" class="quarto-xref">Figure&nbsp;<span>4.5</span></a>).</p>
 <div id="fig-crispr3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr3.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.4: Highlighting the pkfA2 coding sequence in Benchling
+Figure&nbsp;4.5: Highlighting the pkfA2 coding sequence in Benchling
 </figcaption>
 </figure>
 </div>
 <p>Highlight this sequence, and then (you will have to close the search menu), click “Create” &gt; “Translation” &gt; “Forward”.</p>
-<p>Name your translation (e.g., pkfA2) and then click “Save”. The amino acid translation of <em>pkfA2</em> should appear below the sequence (<span class="quarto-unresolved-ref">?fig-crispr4</span>).</p>
-<p><img src="0images/crispr4.png" id="fig-crispr4" class="img-fluid" alt="The pkfA2 sequence, with translation added, in Benchling"> ### Select a guide RNA sequence</p>
+<p>Name your translation (e.g., pkfA2) and then click “Save”. The amino acid translation of <em>pkfA2</em> should appear below the sequence (<a href="#fig-crispr4" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>).</p>
+<div id="fig-crispr4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-crispr4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="0images/crispr4.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.6: The pkfA2 sequence, with translation added, in Benchling
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="select-a-guide-rna-sequence" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="select-a-guide-rna-sequence"><span class="header-section-number">4.1.2</span> Select a guide RNA sequence</h3>
 <p>You want to select a guide sequence according to the following part of the pCRISPomyces-1 and 2 plasmid assembly protocol:</p>
 <ol type="1">
 <li>Select a 20 nt protospacer of interest. The 3’ protospacer adjacent sequence (PAM) must be NGG, where N is any nucleotide. Preference is given to:</li>
@@ -262,39 +285,39 @@ Figure&nbsp;4.4: Highlighting the pkfA2 coding sequence in Benchling
 <li>sequences on the non-coding strand.</li>
 <li>sequences in which the last 12 nt of protospacer + 3 nt PAM (15 nt total) are unique in the genome (check by BLAST with all four possible NGG sequences).</li>
 </ol>
-<p>Looking at the sequence, we can see several potential protospacers, e.g.&nbsp;the one highlighted in <a href="#fig-crispr5" class="quarto-xref">Figure&nbsp;<span>4.5</span></a> (upstream of a CGG PAM motif)</p>
+<p>Looking at the sequence, we can see several potential protospacers, e.g.&nbsp;the one highlighted in <a href="#fig-crispr5" class="quarto-xref">Figure&nbsp;<span>4.7</span></a> (upstream of a CGG PAM motif)</p>
 <div id="fig-crispr5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr5.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.5: The pkfA2 sequence, with a potential PAM motif highlighted, in Benchling
+Figure&nbsp;4.7: The pkfA2 sequence, with a potential PAM motif highlighted, in Benchling
 </figcaption>
 </figure>
 </div>
 <p>You would, of course, need to check whether this protospacer is specific enough, following the checks outlined above.</p>
 <p>Once you are satisfied that you have identified a protospacer that you can use, right click on it, and then select “Create primer” &gt; “Forward”.</p>
-<p>Following the protocol, we need to add a sticky end onto the primer (5’-ACGC). Copy or type those 4 nucleotides at the 5’ end of your primer, and then adjust the overhang (4 bp) as shown in <a href="#fig-crispr7" class="quarto-xref">Figure&nbsp;<span>4.6</span></a>.</p>
+<p>Following the protocol, we need to add a sticky end onto the primer (5’-ACGC). Copy or type those 4 nucleotides at the 5’ end of your primer, and then adjust the overhang (4 bp) as shown in <a href="#fig-crispr7" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>.</p>
 <div id="fig-crispr7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr7.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.6: Creating the pkfA2 gRNA forward primer
+Figure&nbsp;4.8: Creating the pkfA2 gRNA forward primer
 </figcaption>
 </figure>
 </div>
 <p>Give your primer a sensible name and be sure to save it in the correct Project folder.</p>
-<p>Repeat this process for the reverse primer, noting that in this instance the 5’ sticky overhang sequence should be 5’-AAAC (<a href="#fig-crispr8" class="quarto-xref">Figure&nbsp;<span>4.7</span></a>)</p>
+<p>Repeat this process for the reverse primer, noting that in this instance the 5’ sticky overhang sequence should be 5’-AAAC (<a href="#fig-crispr8" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>)</p>
 <div id="fig-crispr8" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr8.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.7: Creating the pkfA2 gRNA reverse primer
+Figure&nbsp;4.9: Creating the pkfA2 gRNA reverse primer
 </figcaption>
 </figure>
 </div>
@@ -307,9 +330,9 @@ Figure&nbsp;4.7: Creating the pkfA2 gRNA reverse primer
 <section id="import-the-pcrispomyces-2-plasmid-sequence-from-addgene" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="import-the-pcrispomyces-2-plasmid-sequence-from-addgene"><span class="header-section-number">4.2.1</span> Import the pCrispomyces-2 plasmid sequence from Addgene</h3>
 <ol type="1">
-<li><p>Go to the <a href="https://www.addgene.org/">Addgene</a> website and search for the pCrispomyces-2 plasmid. You should find it as <a href="https://www.addgene.org/61737/">Plasmid #61737</a>. Copy the URL to this page.</p></li>
+<li><p>Go to the <a href="https://www.addgene.org/">Addgene</a> website and search for the pCrispomyces-2 plasmid. You should find it as <a href="https://www.addgene.org/61737/">Plasmid #61737</a>. Copy the URL to this page (https://www.addgene.org/61737/).</p></li>
 <li><p>In Benchling, click the + icon in the left-hand bar, and then click “DNA/RNA sequence” &gt; “Import DNA/RNA sequence”.</p></li>
-<li><p>In the pop-up window, click “Import from database” and paste your addgene url into the “Sequence” field (<a href="#fig-crispr9" class="quarto-xref">Figure&nbsp;<span>4.8</span></a>). click “Search”, and then “Import”. This should import the pCRISPomyces-2 plasmid into your Benchling account (be sure to save it to your correct folder).</p></li>
+<li><p>In the pop-up window, click “Import from database” and paste your addgene url into the “Sequence” field (<a href="#fig-crispr9" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>). click “Search”, and then “Import”. This should import the pCRISPomyces-2 plasmid into your Benchling account (be sure to save it to your correct folder).</p></li>
 </ol>
 <div id="fig-crispr9" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -317,18 +340,18 @@ Figure&nbsp;4.7: Creating the pkfA2 gRNA reverse primer
 <img src="0images/crispr9.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.8: Importing the pCrispomyces-2 sequence from Addgene into Benchling
+Figure&nbsp;4.10: Importing the pCrispomyces-2 sequence from Addgene into Benchling
 </figcaption>
 </figure>
 </div>
-<p>You should be able to view the map of the plasmid you imported (<a href="#fig-crispr10" class="quarto-xref">Figure&nbsp;<span>4.9</span></a>).</p>
+<p>You should be able to view the map of the plasmid you imported (<a href="#fig-crispr10" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>).</p>
 <div id="fig-crispr10" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr10.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.9: The imported pCrispomyces-2 plasmid map
+Figure&nbsp;4.11: The imported pCrispomyces-2 plasmid map
 </figcaption>
 </figure>
 </div>
@@ -337,7 +360,7 @@ Figure&nbsp;4.9: The imported pCrispomyces-2 plasmid map
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="assemble-pcrispomyces-2-with-the-flanking-1000-nucleotides-up--and-down--stream-of-pkfa2"><span class="header-section-number">4.2.2</span> Assemble pCrispomyces-2 with the flanking 1000 nucleotides up- and down- stream of <em>pkfA2</em></h3>
 <ol type="1">
 <li><p>In the bottom right hand corner, click “Assembly” &gt; “Assembly wizard”, then select “Gibson” and click on the “try the new combinatorial assembly tool here” link.</p></li>
-<li><p>In the “Assemble DNA” pop-up window, give your new construct a sensible name and make sure you are saving it in the correct Project folder. Then, make sure that you are specifying the correct parameters for your construct: 3 fragment bins, Circular topology, Add never overlaps using PCR - then click “Save”. (<a href="#fig-crispr11" class="quarto-xref">Figure&nbsp;<span>4.10</span></a>)</p></li>
+<li><p>In the “Assemble DNA” pop-up window, give your new construct a sensible name and make sure you are saving it in the correct Project folder. Then, make sure that you are specifying the correct parameters for your construct: 3 fragment bins, Circular topology, Add never overlaps using PCR - then click “Save”. (<a href="#fig-crispr11" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>)</p></li>
 </ol>
 <div id="fig-crispr11" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -345,12 +368,12 @@ Figure&nbsp;4.9: The imported pCrispomyces-2 plasmid map
 <img src="0images/crispr11.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.10: Using the Benchling Assembly Wizard
+Figure&nbsp;4.12: Using the Benchling Assembly Wizard
 </figcaption>
 </figure>
 </div>
 <ol start="3" type="1">
-<li>For BIN 1/Backbone, select “Digest with restriction enzyme” and then click the + symbol &gt; “Open sequence” &gt; select your pCrispomyces-2 plasmid (<a href="#fig-crispr12" class="quarto-xref">Figure&nbsp;<span>4.11</span></a>).</li>
+<li>For BIN 1/Backbone, select “Digest with restriction enzyme” and then click the + symbol &gt; “Open sequence” &gt; select your pCrispomyces-2 plasmid (<a href="#fig-crispr12" class="quarto-xref">Figure&nbsp;<span>4.13</span></a>).</li>
 </ol>
 <div id="fig-crispr12" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -358,18 +381,18 @@ Figure&nbsp;4.10: Using the Benchling Assembly Wizard
 <img src="0images/crispr12.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.11: Adding pCrispomyces-2 to BIN 1 in your assembly
+Figure&nbsp;4.13: Adding pCrispomyces-2 to BIN 1 in your assembly
 </figcaption>
 </figure>
 </div>
-<p>Specify the 5’ enzyme and 3’ enzyme (XbaI for both) and select the Start and End sites at the XbaI cut sites (ensure that you have selected the entire plasmid, 11.0 kb out of 11.0 kb, as shown in <a href="#fig-crispr13" class="quarto-xref">Figure&nbsp;<span>4.12</span></a>)</p>
+<p>Specify the 5’ enzyme and 3’ enzyme (XbaI for both) and select the Start and End sites at the XbaI cut sites (ensure that you have selected the entire plasmid, 11.0 kb out of 11.0 kb, as shown in <a href="#fig-crispr13" class="quarto-xref">Figure&nbsp;<span>4.14</span></a>)</p>
 <div id="fig-crispr13" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr13.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr13-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.12: Selecting the pCrispomyces-2 backbone for your plasmid assembly
+Figure&nbsp;4.14: Selecting the pCrispomyces-2 backbone for your plasmid assembly
 </figcaption>
 </figure>
 </div>
@@ -378,20 +401,20 @@ Figure&nbsp;4.12: Selecting the pCrispomyces-2 backbone for your plasmid assembl
 <li>For BIN 2/Insert 1, add the 1000 nucleotides upstream of <em>pkfA2</em> as follows:</li>
 </ol>
 <p>Ensure that “Add new overlaps using PCR is selected”, then click the + symbol &gt; open sequences &gt; select your pkfA2 file.</p>
-<p>Select, in the sequence that pops up, the nucleotides up until the ATG start codon (or type 1 and 1000 into the Start and End fields, respectively), as shown in <a href="#fig-crispr14" class="quarto-xref">Figure&nbsp;<span>4.13</span></a> - then click the Add button.</p>
+<p>Select, in the sequence that pops up, the nucleotides up until the ATG start codon (or type 1 and 1000 into the Start and End fields, respectively), as shown in <a href="#fig-crispr14" class="quarto-xref">Figure&nbsp;<span>4.15</span></a> - then click the Add button.</p>
 <div id="fig-crispr14" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr14.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.13: Selecting the 1000 nucleotides upstream of the pkfA2 coding sequence
+Figure&nbsp;4.15: Selecting the 1000 nucleotides upstream of the pkfA2 coding sequence
 </figcaption>
 </figure>
 </div>
 <ol start="5" type="1">
 <li><p>For BIN 3/Insert 2, do the same, but select the 1000 nucleotides downstream of <em>pkfA2</em>.</p></li>
-<li><p>Check in the “Fragments” field that your 3 fragments have been added correctly and that their status is “Looks good” (<a href="#fig-crispr15" class="quarto-xref">Figure&nbsp;<span>4.14</span></a>) - then click “Autopopulate” in the “Constructs” field.</p></li>
+<li><p>Check in the “Fragments” field that your 3 fragments have been added correctly and that their status is “Looks good” (<a href="#fig-crispr15" class="quarto-xref">Figure&nbsp;<span>4.16</span></a>) - then click “Autopopulate” in the “Constructs” field.</p></li>
 </ol>
 <div id="fig-crispr15" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -399,41 +422,41 @@ Figure&nbsp;4.13: Selecting the 1000 nucleotides upstream of the pkfA2 coding se
 <img src="0images/crispr15.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.14: Checking the status of your fragments in your Benchling assembly
+Figure&nbsp;4.16: Checking the status of your fragments in your Benchling assembly
 </figcaption>
 </figure>
 </div>
 <p>Check the construct that this assembles, and then click “Assemble” (top right-hand corner of the page).</p>
-<p>In the “Assemble DNA” field that pops up, save your constructs, fragments, and primers to the correct location (<a href="#fig-crispr16" class="quarto-xref">Figure&nbsp;<span>4.15</span></a>), then click “Assemble”.</p>
+<p>In the “Assemble DNA” field that pops up, save your constructs, fragments, and primers to the correct location (<a href="#fig-crispr16" class="quarto-xref">Figure&nbsp;<span>4.17</span></a>), then click “Assemble”.</p>
 <div id="fig-crispr16" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr16.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.15: Saving your DNA assembly components in Benchling
+Figure&nbsp;4.17: Saving your DNA assembly components in Benchling
 </figcaption>
 </figure>
 </div>
-<p>This should produce your final construct (click to open a larger view, as seen in <a href="#fig-crispr17" class="quarto-xref">Figure&nbsp;<span>4.16</span></a>).</p>
+<p>This should produce your final construct (click to open a larger view, as seen in <a href="#fig-crispr17" class="quarto-xref">Figure&nbsp;<span>4.18</span></a>).</p>
 <div id="fig-crispr17" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr17.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.16: Map of your assembled construct
+Figure&nbsp;4.18: Map of your assembled construct
 </figcaption>
 </figure>
 </div>
-<p>If you click on “Primers”, you will see the primers that you would need to order, to amplify the <em>pkfA2</em> flanking regions by PCR for this Gibson assembly (<a href="#fig-crispr18" class="quarto-xref">Figure&nbsp;<span>4.17</span></a>).</p>
+<p>If you click on “Primers”, you will see the primers that you would need to order, to amplify the <em>pkfA2</em> flanking regions by PCR for this Gibson assembly (<a href="#fig-crispr18" class="quarto-xref">Figure&nbsp;<span>4.19</span></a>).</p>
 <div id="fig-crispr18" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-crispr18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="0images/crispr18.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispr18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4.17: Primers needed for your Gibson assembly reaction
+Figure&nbsp;4.19: Primers needed for your Gibson assembly reaction
 </figcaption>
 </figure>
 </div>
