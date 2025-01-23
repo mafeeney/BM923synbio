@@ -1,0 +1,141 @@
+---
+title: "Deleting pkfA2 (using CRISPR)"
+---
+
+We wish to delete the gene encoding a phosphofructokinase (*pfkA2*) from *Streptomyces coelicolor* A3(2), as previous work has shown that this deletion leads to increased production of certain antibiotics (Borodina et al 2008 - https://doi.org/10.1074/jbc.M803105200). 
+
+This document outlines the necessary steps for designing a strategy to delete *pkfA2* using the CRISPR method of Cobb et al 2015 (doi 10.1021/sb500351f), see <a href="https://actinobase.org/index.php/CRISPR/Cas9-mediated_genome_editing">detailed protocol from Actinobase</a>:   and also <a href="https://media.addgene.org/data/plasmids/61/61737/61737-attachment_rH8ZSJ2mRhaS.pdf">pCRISPomyces-1 and -2 Plasmid Assembly Protocol</a> for more details on primer design.
+
+![Overview of the CRISPR deletion strategy using pCRISPomyces-2 (in this example, used to delete the *red* cluster)](0images/crispr1.png){#fig-crispr1}
+You will need to 1) select and clone a guide RNA (gRNA) into pCRISPomyces-2, and 2) select and clone the regions flanking the gene that you wish to delete (*pkfA2* into this plasmid).
+
+## gRNA cloning
+
+### Import the *pkfA2* sequence into Benchling so that you can work with it
+
+You will first need to obtain the *pkfA2* sequence and import it into Benchling. You will want the sequence of the gene itself, plus 1000 nucleotides either side (to design the flanking regions you will need later on).
+
+1. Obtain the pfkA2 (SCO5426) sequence from StrepDB with 1000 flanking nucleotides to either side: 
+
+Navigate to <a href="https://strepdb.streptomyces.org.uk/">StrepDB</a> and search for pkfA2 (@fig-Red2)
+
+![Searching for pkfA2 in StrepDB](0images/Red2.png){#fig-Red2}
+
+Obtain the nucleotide sequence with 1000 flanking nucleotides (@fig-crispr2). You will want to copy this sequence over into Benchling.
+
+![The pkfA2 sequence, with 1000 flanking nucleotides, in StrepDB](0images/crispr2.png){#fig-crispr2}
+
+2. In a new project (click the + symbol in the left-hand menu, then click Project, and give your project an informative name and description), add a new DNA sequence. 
+
+Do this by clicking the + icon again, then clicking "DNA/RNA sequence", and then clicking "New DNA/RNA sequence" (@fig-Red4)
+
+![Adding a new DNA/RNA sequence in Benchling](0images/Red4.png){#fig-Red4}
+
+3. In your new pkfA2 sequence in Benchling, you will want to find and annotate the *pkfA2* open reading frame (for your own convenience/ease of downstream steps).
+
+You can do this by copying the blue portion of the sequence from StrepDB (@fig-crispr2), and searching for it in your Benchling sequence (Ctrl+F, then paste in your copied sequence) - this should find the *pkfA2* open reading frame (@fig-crispr3).
+
+![Highlighting the pkfA2 coding sequence in Benchling](0images/crispr3.png){#fig-crispr3}
+
+Highlight this sequence, and then (you will have to close the search menu), click "Create" > "Translation" > "Forward".
+
+Name your translation (e.g., pkfA2) and then click "Save". The amino acid translation of *pkfA2* should appear below the sequence (@fig-crispr4). 
+
+![The pkfA2 sequence, with translation added, in Benchling](0images/crispr4.png){#fig-crispr4}
+### Select a guide RNA sequence 
+
+You want to select a guide sequence according to the following part of the pCRISPomyces-1 and 2 plasmid assembly protocol:
+
+1) Select a 20 nt protospacer of interest. The 3’ protospacer adjacent sequence (PAM) must
+be NGG, where N is any nucleotide. Preference is given to:
+a. sequences with purines occupying the last four (3’) bases of the protospacer.
+b. sequences on the non-coding strand.
+c. sequences in which the last 12 nt of protospacer + 3 nt PAM (15 nt total) are
+unique in the genome (check by BLAST with all four possible NGG sequences).
+
+Looking at the sequence, we can see several potential protospacers, e.g. the one highlighted in @fig-crispr5 (upstream of a CGG PAM motif)
+
+![The pkfA2 sequence, with a potential PAM motif highlighted, in Benchling](0images/crispr5.png){#fig-crispr5}
+
+You would, of course, need to check whether this protospacer is specific enough, following the checks outlined above.
+
+Once you are satisfied that you have identified a protospacer that you can use, right click on it, and then select "Create primer" > "Forward".
+
+Following the protocol, we need to add a sticky end onto the primer (5’-ACGC). Copy or type those 4 nucleotides at the 5' end of your primer, and then adjust the overhang (4 bp) as shown in @fig-crispr7.
+
+![Creating the pkfA2 gRNA forward primer](0images/crispr7.png){#fig-crispr7}
+
+Give your primer a sensible name and be sure to save it in the correct Project folder.
+
+Repeat this process for the reverse primer, noting that in this instance the 5' sticky overhang sequence should be  5’-AAAC (@fig-crispr8)
+
+![Creating the pkfA2 gRNA reverse primer](0images/crispr8.png){#fig-crispr8}
+
+To create your gRNA construct, you would then order these oligos synthesized, anneal them, and insert them into your pCrispomyces2 vector using <a href="https://www.neb-online.de/en/cloning-synthetic-biology/dna-assembly/golden-gate-assembly/">Golden Gate assembly</a>.
+
+## Repair template construction
+
+You will also want to create a repair template (which the cells will use to repair the dsDNA break introduced by Cas9 at the site targeted by your gRNA). You can do this using <a href="https://www.neb.com/en-gb/applications/cloning-and-synthetic-biology/dna-assembly-and-cloning/gibson-assembly">Gibson assembly</a>.
+
+### Import the pCrispomyces-2 plasmid sequence from Addgene
+
+1. Go to the <a href="https://www.addgene.org/">Addgene</a> website and search for the pCrispomyces-2 plasmid. You should find it as <a href=https://www.addgene.org/61737/>Plasmid #61737</a>. Copy the URL to this page.
+
+2. In Benchling, click the + icon in the left-hand bar, and then click "DNA/RNA sequence" > "Import DNA/RNA sequence".
+
+3. In the pop-up window, click "Import from database" and paste your addgene url into the "Sequence" field (@fig-crispr9). click "Search", and then "Import". This should import the pCRISPomyces-2 plasmid into your Benchling account (be sure to save it to your correct folder). 
+
+![Importing the pCrispomyces-2 sequence from Addgene into Benchling](0images/crispr9.png){#fig-crispr9}
+
+You should be able to view the map of the plasmid you imported (@fig-crispr10).
+
+![The imported pCrispomyces-2 plasmid map](0images/crispr10.png){#fig-crispr10}
+
+### Assemble pCrispomyces-2 with the flanking 1000 nucleotides up- and down- stream of *pkfA2*
+
+1. In the bottom right hand corner, click "Assembly" > "Assembly wizard", then select "Gibson" and click on the "try the new combinatorial assembly tool here" link.
+
+2. In the "Assemble DNA" pop-up window, give your new construct a sensible name and make sure you are saving it in the correct Project folder. Then, make sure that you are specifying the correct parameters for your construct: 3 fragment bins, Circular topology, Add never overlaps using PCR - then click "Save". (@fig-crispr11)
+
+![Using the Benchling Assembly Wizard](0images/crispr11.png){#fig-crispr11}
+
+3. For BIN 1/Backbone, select "Digest with restriction enzyme" and then click the + symbol > "Open sequence" > select your pCrispomyces-2 plasmid (@fig-crispr12).
+
+![Adding pCrispomyces-2 to BIN 1 in your assembly](0images/crispr12.png){#fig-crispr12}
+
+Specify the 5' enzyme and 3' enzyme (XbaI for both) and select the Start and End sites at the XbaI cut sites (ensure that you have selected the entire plasmid, 11.0 kb out of 11.0 kb, as shown in @fig-crispr13)
+
+![Selecting the pCrispomyces-2 backbone for your plasmid assembly](0images/crispr13.png){#fig-crispr13}
+
+Click "Add".
+
+4. For BIN 2/Insert 1, add the 1000 nucleotides upstream of *pkfA2* as follows:
+
+Ensure that "Add new overlaps using PCR is selected", then click the + symbol > open sequences > select your pkfA2 file. 
+
+Select, in the sequence that pops up, the nucleotides up until the ATG start codon (or type 1 and 1000 into the Start and End fields, respectively), as shown in @fig-crispr14
+- then click the Add button.
+
+![Selecting the 1000 nucleotides upstream of the pkfA2 coding sequence](0images/crispr14.png){#fig-crispr14}
+
+5. For BIN 3/Insert 2, do the same, but select the 1000 nucleotides downstream of *pkfA2*.
+
+6. Check in the "Fragments" field that your 3 fragments have been added correctly and that their status is "Looks good" (@fig-crispr15) - then click "Autopopulate" in the "Constructs" field. 
+
+![Checking the status of your fragments in your Benchling assembly](0images/crispr15.png){#fig-crispr15}
+
+Check the construct that this assembles, and then click "Assemble" (top right-hand corner of the page).
+
+In the "Assemble DNA" field that pops up, save your constructs, fragments, and primers to the correct location (@fig-crispr16), then click "Assemble".
+
+![Saving your DNA assembly components in Benchling](0images/crispr16.png){#fig-crispr16}
+
+This should produce your final construct (click to open a larger view, as seen in @fig-crispr17).
+
+![Map of your assembled construct](0images/crispr17.png){#fig-crispr17}
+
+If you click on "Primers", you will see the primers that you would need to order, to amplify the *pkfA2* flanking regions by PCR for this Gibson assembly (@fig-crispr18).
+
+![Primers needed for your Gibson assembly reaction](0images/crispr18.png){#fig-crispr18}
+
+After the Gibson assembly, you would confirm that the construct you generated is correct; then introduce it into desired Streptomyces strain by intrageneric conjugation; then screen exconjugants for *pkfA2* deletion by PCR.
